@@ -12,7 +12,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 # Install pip requirements
-COPY requirements.txt .
+COPY requirements*.txt .
 RUN python -m pip install -r requirements.txt
 
 # The following WORKDIR is where the app runs inside the container
@@ -31,4 +31,5 @@ USER appuser
 
 # Command to run. The host is directed to "0.0.0.0" to make it accessible from
 # outside the container.
+CMD ["echo", "starting server"]
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--reload"]
