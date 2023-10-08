@@ -141,6 +141,7 @@ class Row:
                 }
             }
         """
+        # Input times is in the format of the Nike Run Club pace chart.
         _input_times = {
             Distance.MILE: {
                 TimeKind.TOTAL: Time.from_str(values[0]),
@@ -177,28 +178,38 @@ class Row:
         imperial format (pace per mile) then it transforms the pace to
         be per kilometer.
         """
-        if self.__input_metric:
-            return input_data
-        # fmt: off
+        # Initialize result.
         metric_data: RowDict = {}
-        metric_data[Distance.MILE] = {}
-        metric_data[Distance.MILE][TimeKind.TOTAL] = input_data[Distance.MILE][TimeKind.TOTAL]
-        metric_data[Distance.MILE][TimeKind.PACE] = input_data[Distance.MILE][TimeKind.TOTAL] / self.mile_to_km
-        metric_data[Distance._5K] = {}
-        metric_data[Distance._5K][TimeKind.TOTAL] = input_data[Distance._5K][TimeKind.TOTAL]
-        metric_data[Distance._5K][TimeKind.PACE] = input_data[Distance._5K][TimeKind.PACE] / self.mile_to_km
-        metric_data[Distance._10K] = {}
-        metric_data[Distance._10K][TimeKind.TOTAL] = input_data[Distance._10K][TimeKind.TOTAL]
-        metric_data[Distance._10K][TimeKind.PACE] = input_data[Distance._10K][TimeKind.PACE] / self.mile_to_km
-        metric_data[Distance.TEMPO] = {}
-        metric_data[Distance.TEMPO][TimeKind.PACE] = input_data[Distance.TEMPO][TimeKind.PACE] / self.mile_to_km
-        metric_data[Distance.HALF_MARATHON] = {}
-        metric_data[Distance.HALF_MARATHON][TimeKind.TOTAL] = input_data[Distance.HALF_MARATHON][TimeKind.TOTAL]
-        metric_data[Distance.HALF_MARATHON][TimeKind.PACE] = input_data[Distance.HALF_MARATHON][TimeKind.PACE] / self.mile_to_km
-        metric_data[Distance.MARATHON] = {}
-        metric_data[Distance.MARATHON][TimeKind.TOTAL] = input_data[Distance.MARATHON][TimeKind.TOTAL]
-        metric_data[Distance.MARATHON][TimeKind.PACE] = input_data[Distance.MARATHON][TimeKind.PACE] / self.mile_to_km
-        # fmt: on
+        metric_data = {**input_data}
+
+        # Regardless of input data, compute the mile pace per km,
+        # because this value is nor provided either way.
+        metric_data[Distance.MILE][TimeKind.PACE] = (
+            metric_data[Distance.MILE][TimeKind.TOTAL] / self.mile_to_km
+        )
+        # Compute the missing pace for mile
+        if self.__input_metric:
+            # input data was given in metric units, so the pace values
+            # are already per kilometer.
+            return metric_data
+
+        # else: the input data was given in imperial units and so the
+        # pace values need to be converted from "per mile" to "per km".
+        metric_data[Distance._5K][TimeKind.PACE] = (
+            metric_data[Distance._5K][TimeKind.PACE] / self.mile_to_km
+        )
+        metric_data[Distance._10K][TimeKind.PACE] = (
+            metric_data[Distance._10K][TimeKind.PACE] / self.mile_to_km
+        )
+        metric_data[Distance.TEMPO][TimeKind.PACE] = (
+            metric_data[Distance.TEMPO][TimeKind.PACE] / self.mile_to_km
+        )
+        metric_data[Distance.HALF_MARATHON][TimeKind.PACE] = (
+            metric_data[Distance.HALF_MARATHON][TimeKind.PACE] / self.mile_to_km
+        )
+        metric_data[Distance.MARATHON][TimeKind.PACE] = (
+            metric_data[Distance.MARATHON][TimeKind.PACE] / self.mile_to_km
+        )
         return metric_data
 
     def to_json(self) -> RowDictJSON:
@@ -225,9 +236,11 @@ class Row:
         return self.__str__()
 
 
-PaceChartDict = dict[str, Row]
+PaceChartDict = dict[Time, Row]
 PaceChartDictJSON = dict[str, RowDictJSON]
 
+IndexesDict = dict[Distance, dict[Time, Time]]
+IndexesDictJSON = dict[str, dict[str, str]]
 
 class PaceChart:
     def __init__(
@@ -238,22 +251,56 @@ class PaceChart:
         for row in csv_rows:
             row_obj = Row(*row, metric=False)
             pace_10k = row_obj.data[Distance._10K][TimeKind.PACE]
-            self.data[str(pace_10k)] = row_obj
-        self.data_json = self.to_json()
+            self.data[pace_10k] = row_obj
 
-    def to_json(self) -> PaceChartDictJSON:
+        self.indexes = self.compute_indexes()
+
+        self.data_json, self.indexes_json = self.to_json()
+
+    def compute_indexes(self) -> IndexesDict:
+        """Write indexes for the rows.
+
+        Each index points from a distance pace to the 10k pace, that
+        way knowing the pace for any distance it's possible to fetch all
+        the row info for it without having to go over all the objects.
+        """
+        indexes: IndexesDict = {}
+        for pace_10k, row_obj in self.data.items():
+            for distance, times in row_obj.data.items():
+                if distance not in indexes:
+                    indexes[distance] = {}
+                indexes[distance][times[TimeKind.PACE]] = pace_10k
+
+        return indexes
+
+    def to_json(self) -> tuple[PaceChartDictJSON, IndexesDictJSON]:
         data_json: PaceChartDictJSON = {}
-        for pace_str, row_obj in self.data.items():
-            data_json[pace_str] = row_obj.to_json()
-        return data_json
+        for pace, row_obj in self.data.items():
+            data_json[str(pace)] = row_obj.to_json()
+
+        indexes_json: IndexesDictJSON = {}
+        for distance, index in self.indexes.items():
+            distance_str = distance.value
+            indexes_json[distance_str] = {}
+            for distance_total, pace_10k in index.items():
+                distance_total_str = str(distance_total)
+                pace_10k_str = str(pace_10k)
+                indexes_json[distance_str][distance_total_str]= pace_10k_str
+
+        return data_json, indexes_json
 
     def to_file(self, file_path) -> None:
+        """Write data and indexes to file."""
+        file_data = {
+            "data": self.data_json,
+            "indexes": self.indexes_json,
+        }
         with open(file_path, "w") as json_file:
-            json.dump(self.data_json, json_file, indent=2)
+            json.dump(file_data, json_file, indent=2)
 
 
-def main() -> None:
-    """Main function of the script.
+def parse_paces_chart_csv_to_json() -> None:
+    """Read paces csv file and write to json.
 
     Read the source data from pace_chart.csv and parse it to a json.
     The keys in the json are the pace values for 10k.
@@ -273,4 +320,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    parse_paces_chart_csv_to_json()
