@@ -3,9 +3,8 @@ from __future__ import annotations
 import csv
 import json
 import os
-from typing import cast
 from enum import Enum
-
+from typing import cast
 
 HERE = os.path.dirname(__file__)
 DATA_DIR = os.path.dirname(HERE)
@@ -75,6 +74,13 @@ class TimeKind(str, Enum):
     TOTAL = "total"
     PACE = "pace"
 
+    @classmethod
+    def get_by_value(cls, val: str) -> TimeKind:
+        return {
+            "total": cls.TOTAL,
+            "pace": cls.PACE,
+        }[val]
+
 
 class Distance(str, Enum):
     MILE = "mile"
@@ -83,6 +89,17 @@ class Distance(str, Enum):
     TEMPO = "tempo"
     HALF_MARATHON = "half_marathon"
     MARATHON = "marathon"
+
+    @classmethod
+    def get_by_value(cls, val: str) -> Distance:
+        return {
+            "mile": cls.MILE,
+            "5k": cls._5K,
+            "10k": cls._10K,
+            "tempo": cls.TEMPO,
+            "half_marathon": cls.HALF_MARATHON,
+            "marathon": cls.MARATHON,
+        }[val]
 
 
 OneDistanceTimes = dict[TimeKind, Time]
@@ -242,6 +259,7 @@ PaceChartDictJSON = dict[str, RowDictJSON]
 IndexesDict = dict[Distance, dict[Time, Time]]
 IndexesDictJSON = dict[str, dict[str, str]]
 
+
 class PaceChart:
     def __init__(
         self, csv_header: list[str], csv_rows: list[list[str]], metric: bool
@@ -285,7 +303,7 @@ class PaceChart:
             for distance_total, pace_10k in index.items():
                 distance_total_str = str(distance_total)
                 pace_10k_str = str(pace_10k)
-                indexes_json[distance_str][distance_total_str]= pace_10k_str
+                indexes_json[distance_str][distance_total_str] = pace_10k_str
 
         return data_json, indexes_json
 
