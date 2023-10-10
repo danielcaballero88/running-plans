@@ -1,7 +1,8 @@
 from pydantic import BaseModel, field_validator
 
+from .data.enums import Distance, TimeKind
 from .data.get_pace_chart import get_pace_chart
-from .data.scripts.parse_to_json import Distance, Time, TimeKind
+from .data.time_class import Time
 
 
 class KnownInput(BaseModel):

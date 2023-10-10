@@ -3,103 +3,13 @@ from __future__ import annotations
 import csv
 import json
 import os
-from enum import Enum
 from typing import cast
+
+from ..enums import Distance, TimeKind
+from ..time_class import Time
 
 HERE = os.path.dirname(__file__)
 DATA_DIR = os.path.dirname(HERE)
-
-
-class Time:
-    """Class to work with running times."""
-
-    def __init__(self, hour: int, min: int, sec: int):
-        self.hour = hour
-        self.min = min
-        self.sec = sec
-
-    @classmethod
-    def from_str(cls, hour_min_sec_str: str) -> Time:
-        """Read string into Time instance.
-
-        Example:
-            >>> Time.from_str("31:45")
-            >>> <Time 00:31:45>
-
-            >>> Time.from_str("5:15:00")
-            >>> <Time 05:15:00>
-        """
-        splitted = hour_min_sec_str.split(":")
-        if len(splitted) == 2:
-            hour = 0
-            min = int(splitted[0])
-            sec = int(splitted[1])
-        elif len(splitted) == 3:
-            hour = int(splitted[0])
-            min = int(splitted[1])
-            sec = int(splitted[2])
-        else:
-            raise ValueError(
-                "Wrong number of values splitted by ':' in '%s'", hour_min_sec_str
-            )
-        instance = cls(hour, min, sec)
-        return instance
-
-    def __truediv__(self, other: int | float) -> Time:
-        """Division of Time object by a number.
-
-        Transforms time to seconds, performs division and parses back
-        into Time object before returning.
-        """
-        if not isinstance(other, (int, float)):
-            other_type = type(other)
-            raise TypeError(f"Cannot divide Time object by type {other_type}")
-
-        total_sec = self.sec + self.min * 60 + self.hour * 3600
-        result_total_sec = int(total_sec // other)
-        result_hour = result_total_sec // 3600
-        leftover_sec = result_total_sec % 3600
-        result_min = leftover_sec // 60
-        result_sec = leftover_sec % 60
-        return Time(result_hour, result_min, result_sec)
-
-    def __str__(self):
-        return f"{self.hour:02d}:{self.min:02d}:{self.sec:02d}"
-
-    def __repr__(self):
-        return f"<Time {self.hour:02d}:{self.min:02d}:{self.sec:02d}>"
-
-
-class TimeKind(str, Enum):
-    TOTAL = "total"
-    PACE = "pace"
-
-    @classmethod
-    def get_by_value(cls, val: str) -> TimeKind:
-        return {
-            "total": cls.TOTAL,
-            "pace": cls.PACE,
-        }[val]
-
-
-class Distance(str, Enum):
-    MILE = "mile"
-    _5K = "5k"
-    _10K = "10k"
-    TEMPO = "tempo"
-    HALF_MARATHON = "half_marathon"
-    MARATHON = "marathon"
-
-    @classmethod
-    def get_by_value(cls, val: str) -> Distance:
-        return {
-            "mile": cls.MILE,
-            "5k": cls._5K,
-            "10k": cls._10K,
-            "tempo": cls.TEMPO,
-            "half_marathon": cls.HALF_MARATHON,
-            "marathon": cls.MARATHON,
-        }[val]
 
 
 OneDistanceTimes = dict[TimeKind, Time]
