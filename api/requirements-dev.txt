@@ -5,3 +5,4 @@ isort
 mypy
 fastapi[all]
 pytest
+pre-commit
