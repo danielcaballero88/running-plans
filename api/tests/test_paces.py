@@ -1,19 +1,21 @@
 import unittest
 
-from src.paces import Paces, KnownInput
-from src.data.scripts.parse_to_json import Distance, TimeKind, Time
+from src.data.scripts.parse_to_json import Distance, Time, TimeKind
+from src.paces import KnownInput, Paces
+
 
 class TestPaces(unittest.TestCase):
-
     def setUp(self):
         self.paces_instance = ...
 
     def test_input_parsing(self):
-        paces = Paces({
-            "distance": "5k",
-            "time_kind": "pace",
-            "time_value": "33:18",
-        })
+        paces = Paces(
+            {
+                "distance": "5k",
+                "time_kind": "pace",
+                "time_value": "33:18",
+            }
+        )
         assert isinstance(paces.known_input, KnownInput)
         assert paces.known_input.distance == Distance._5K
         assert paces.known_input.time_kind == TimeKind.PACE
