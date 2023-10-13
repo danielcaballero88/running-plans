@@ -1,6 +1,7 @@
 import unittest
 
-from src.data.scripts.parse_to_json import Distance, Time, TimeKind
+from src.data.enums import Distance, TimeKind
+from src.data.time_class import Time
 from src.paces import KnownInput, Paces
 
 

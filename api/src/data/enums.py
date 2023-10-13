@@ -33,3 +33,12 @@ class Distance(str, Enum):
             "half_marathon": cls.HALF_MARATHON,
             "marathon": cls.MARATHON,
         }[val]
+
+
+DISTANCE_VALUES = {
+    Distance.MILE: 1.609344,
+    Distance._5K: 5.0,
+    Distance._10K: 10.0,
+    Distance.HALF_MARATHON: 21.0,
+    Distance.MARATHON: 42.195,
+}
