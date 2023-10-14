@@ -1,10 +1,13 @@
 from __future__ import annotations
 
-from typing import cast
-
 from .enums import DISTANCE_VALUES, Distance, TimeKind
 from .time_class import Time
-from .types import RowDict, RowDictJSON
+
+OneDistanceTimes = dict[TimeKind, Time]
+OneDistanceTimesJSON = dict[str, str]
+
+RowDict = dict[Distance, OneDistanceTimes]
+RowDictJSON = dict[str, OneDistanceTimesJSON]
 
 
 class Row:
@@ -139,7 +142,7 @@ class Row:
         for distance, times in self.data.items():
             data_json[distance] = {}
             for time_kind, time_val in times.items():
-                data_json[distance][time_kind] = str(time_val)
+                data_json[distance.value][time_kind.value] = str(time_val)
         return data_json
 
     @classmethod

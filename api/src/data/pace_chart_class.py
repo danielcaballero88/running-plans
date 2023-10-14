@@ -2,10 +2,15 @@ from __future__ import annotations
 
 import json
 
-from .enums import Distance, TimeKind
-from .row_class import Row
+from .enums import DISTANCE_VALUES, Distance, TimeKind
+from .row_class import Row, RowDictJSON
 from .time_class import Time
-from .types import IndexesDict, IndexesDictJSON, PaceChartDict, PaceChartDictJSON
+
+PaceChartDict = dict[Time, Row]
+PaceChartDictJSON = dict[str, RowDictJSON]
+
+IndexesDict = dict[Distance, dict[Time, Time]]
+IndexesDictJSON = dict[str, dict[str, str]]
 
 
 class PaceChart:
@@ -103,3 +108,23 @@ class PaceChart:
         pace_chart.indexes = indexes
         pace_chart.indexes_json = indexes_json
         return pace_chart
+
+    def get_paces_for_given_input(
+        self, distance: Distance, time_kind: TimeKind, time_value: Time
+    ) -> Row:
+        """Get the dict of paces for a given known input."""
+        # Get the corresponding index for the input distance
+        if time_kind == TimeKind.PACE:
+            input_pace = time_value
+        elif time_kind == TimeKind.TOTAL:
+            input_pace = time_value / DISTANCE_VALUES[distance]
+        index = self.indexes[distance]
+        # Get the pace immediately slower than the given
+        # Sort in increasing order (faster -> slower).
+        index_paces = sorted(list(index.keys()))
+        selected_pace = next(pace for pace in index_paces if pace > input_pace)
+        # Get the correct dict of paces (distance -> pace) for the selected pace.
+        selected_10k_pace = index[selected_pace]
+        paces = self.data[selected_10k_pace]
+        # Done.
+        return paces

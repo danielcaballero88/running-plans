@@ -1,11 +1,7 @@
 from __future__ import annotations
 
-import csv
-import os
-
 from ..pace_chart_class import PaceChart
 from ..pace_chart_io import read_nike_csv, save_pace_chart
-from ..row_class import Row
 
 
 def parse_paces_chart_csv_to_json() -> None:

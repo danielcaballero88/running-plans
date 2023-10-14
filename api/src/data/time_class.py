@@ -64,6 +64,9 @@ class Time:
             raise TypeError("Cannot compare Time instance with another type.")
         return str(self) < str(another)
 
+    def __hash__(self) -> int:
+        return hash(str(self))
+
     def __str__(self):
         return f"{self.hour:02d}:{self.min:02d}:{self.sec:02d}"
 
