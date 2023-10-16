@@ -52,3 +52,18 @@ class TestPaceChart(unittest.TestCase):
             for pace, pace_10k in pace_mapping.items():
                 assert isinstance(pace, str)
                 assert isinstance(pace_10k, str)
+
+    def test_get_paces_for_given_input(self):
+        paces = self.pace_chart.get_paces_for_given_input(
+            distance=Distance._5K,
+            time_kind=TimeKind.PACE,
+            time_value=Time(min=6, sec=10),
+        )
+        assert paces.to_json() == {
+            "mile": {"total": "00:09:30", "pace": "00:05:54"},
+            "5k": {"total": "00:31:45", "pace": "00:06:22"},
+            "10k": {"total": "00:66:00", "pace": "00:06:34"},
+            "tempo": {"pace": "00:06:50"},
+            "half_marathon": {"total": "02:25:00", "pace": "00:06:53"},
+            "marathon": {"total": "05:00:00", "pace": "00:07:05"},
+        }
