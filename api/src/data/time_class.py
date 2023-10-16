@@ -4,7 +4,7 @@ from __future__ import annotations
 class Time:
     """Class to work with running times."""
 
-    def __init__(self, hour: int, min: int, sec: int):
+    def __init__(self, hour: int = 0, min: int = 0, sec: int = 0):
         self.hour = hour
         self.min = min
         self.sec = sec
