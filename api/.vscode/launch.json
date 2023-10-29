@@ -10,7 +10,7 @@
       "request": "launch",
       "console": "integratedTerminal",
       "justMyCode": true,
-      "module": "${command:extension.commandvariable.file.relativeDirDots}.${fileBasenameNoExtension}",
+      "module": "${command:extension.commandvariable.file.relativeDirDots}.${fileBasenameNoExtension}"
     }
   ]
 }

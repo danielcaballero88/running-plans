@@ -10,7 +10,7 @@ their [marathon training plan][1]):
 [1]: https://www.nike.com/pdf/Nike-Run-Club-Marathon-Training-Plan-Audio-Guided-Runs.pdf
 
 | mile best | 5k best  | avg mile pace | 10k best | avg mile pace | tempo avg mile pace | half marathon best | avg mile pace | marathon best | avg mile pace | recovery day pace |
-|-----------|----------|---------------|----------|---------------|---------------------|--------------------|---------------|---------------|---------------|-------------------|
+| --------- | -------- | ------------- | -------- | ------------- | ------------------- | ------------------ | ------------- | ------------- | ------------- | ----------------- |
 | 5:00      | 17:05    | 5:30          | 35:45:00 | 5:45          | 6:05                | 1:18:00            | 6:00          | 2:44:00       | 6:15          | 7:00              |
 | 5:30      | 18:45    | 6:00          | 39:00:00 | 6:15          | 6:35                | 1:25:00            | 6:30          | 3:00:00       | 6:50          | 7:35              |
 | 6:00      | 20:15    | 6:30          | 42:00:00 | 6:45          | 7:05                | 1:35:00            | 7:15          | 3:15:00       | 7:25          | 8:10              |
@@ -28,3 +28,23 @@ their [marathon training plan][1]):
 | 12:00     | 39:30:00 | 12:40         | 81:30:00 | 13:05         | 13:35               | 3:05:00            | 14:05         | 6:00:00       | 13:45         | 14:30             |
 
 This data is transformed to metric and parsed to be used as the source for the running plans.
+
+## Pre-commit hooks
+
+At repo level create a Python virtual environment and install [`pre-commit`](https://pre-commit.com/#install):
+
+```
+pip install pre-commit
+```
+
+Then, already having the configuration in `.pre-commit-config.yaml`, install the hooks with:
+
+```
+pre-commit install
+```
+
+Then, run for all files to make sure things work fine:
+
+```
+pre-commit run --all-files
+```
