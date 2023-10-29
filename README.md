@@ -28,3 +28,23 @@ their [marathon training plan][1]):
 | 12:00     | 39:30:00 | 12:40         | 81:30:00 | 13:05         | 13:35               | 3:05:00            | 14:05         | 6:00:00       | 13:45         | 14:30             |
 
 This data is transformed to metric and parsed to be used as the source for the running plans.
+
+## Pre-commit hooks
+
+At repo level create a Python virtual environment and install [`pre-commit`](https://pre-commit.com/#install):
+
+```
+pip install pre-commit
+```
+
+Then, already having the configuration in `.pre-commit-config.yaml`, install the hooks with:
+
+```
+pre-commit install
+```
+
+Then, run for all files to make sure things work fine:
+
+```
+pre-commit run --all-files
+```
