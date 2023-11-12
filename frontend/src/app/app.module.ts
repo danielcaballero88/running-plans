@@ -8,9 +8,16 @@ import { HeaderComponent } from './components/header/header.component'
 import { FooterComponent } from './components/footer/footer.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppMaterialModule } from 'src/app/app-material/app-material.module'
+import { NavigationComponent } from './components/navigation/navigation.component'
 
 @NgModule({
-  declarations: [AppComponent, MainComponent, HeaderComponent, FooterComponent],
+  declarations: [
+    AppComponent,
+    MainComponent,
+    HeaderComponent,
+    FooterComponent,
+    NavigationComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
