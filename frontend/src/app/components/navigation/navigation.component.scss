@@ -1,0 +1,15 @@
+mat-toolbar {
+  width: 100vw;
+}
+
+mat-sidenav-container {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+mat-sidenav {
+  min-width: 10vw;
+  height: 100vh;
+}

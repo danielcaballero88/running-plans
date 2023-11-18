@@ -3,6 +3,12 @@
   flex-direction: column;
   height: 100%;
 
+  app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
   app-main {
     flex-grow: 1;
   }

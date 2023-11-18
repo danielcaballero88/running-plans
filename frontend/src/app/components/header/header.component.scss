@@ -1,12 +1,5 @@
-.nav-bar {
-  min-height: 40px;
-  background-color: rgb(225, 79, 71);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .title {
-    display: block;
-    font-weight: bold;
-  }
+app-navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
