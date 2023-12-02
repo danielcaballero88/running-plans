@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core'
-import { MatSidenav } from '@angular/material/sidenav'
+import { MatSidenav, MatSidenavContainer } from '@angular/material/sidenav'
 
 @Component({
   selector: 'app-navigation',
@@ -8,6 +8,7 @@ import { MatSidenav } from '@angular/material/sidenav'
 })
 export class NavigationComponent {
   @ViewChild('sidenav') sidenav!: MatSidenav
+  isSidenavOpen: boolean = false
 
   // ngAfterViewInit () {
   //   this.toggleSidenav()
@@ -17,5 +18,6 @@ export class NavigationComponent {
     console.log('toggleSidenav')
     console.log(this.sidenav)
     this.sidenav.toggle()
+    this.isSidenavOpen = !this.isSidenavOpen
   }
 }

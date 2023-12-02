@@ -5,7 +5,7 @@
     </button>
   </mat-toolbar>
 
-  <mat-sidenav-container>
+  <mat-sidenav-container [class.sidenav-open]="isSidenavOpen">
     <mat-sidenav #sidenav mode="side"> Sidenav content </mat-sidenav>
     <mat-sidenav-content>
       <!-- Main content -->
