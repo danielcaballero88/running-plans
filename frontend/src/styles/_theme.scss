@@ -1,0 +1,43 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+// Import custom components partial theme files:
+@use '../app/components/footer/footer.component-theme' as footer;
+
+@include mat.core();
+
+$primary: mat.define-palette(mat.$indigo-palette);
+$accent: mat.define-palette(mat.$pink-palette);
+$warn: mat.define-palette(mat.$red-palette);
+
+$app-typography: mat.define-typography-config(
+  $font-family: 'Nunito',
+);
+
+// Default typography for native header  elements scoped within the
+// .mat-typography CSS class.
+@include mat.typography-hierarchy($app-typography);
+
+$theme: mat.define-light-theme(
+  (
+    'color': (
+      'primary': $primary,
+      'accent': $accent,
+      'warn': $warn,
+    ),
+    // TODO: this line below will also include typography in the theme, I leave
+    // it commented out for now because I want to know exactly what it does so
+    // I'll wait until I actually need it to see its effects.
+    // "typography": $app-typography,
+  )
+);
+
+$color-config: mat.get-color-config($theme);
+$primary-palette: map.get($color-config, 'primary');
+$accent-palette: map.get($color-config, 'accent');
+$warn-palette: map.get($color-config, 'warn');
+$is-dark-theme: map.get($color-config, 'is-dark');
+
+@include mat.all-component-themes($theme);
+
+// Include custom components partial theme mixins:
+@include footer.theme($theme);
