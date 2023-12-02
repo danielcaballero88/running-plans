@@ -1,6 +1,7 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
-@use './app/components/footer/_footer.component-theme.scss' as footer;
+// Import custom components partial theme files:
+@use '../app/components/footer/footer.component-theme' as footer;
 
 @include mat.core();
 
@@ -24,30 +25,7 @@ $accent-palette: map.get($color-config, 'accent');
 $warn-palette: map.get($color-config, 'warn');
 $is-dark-theme: map.get($color-config, 'is-dark');
 
-html {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  height: 100%;
-
-  app-root {
-    display: block;
-    height: 100%;
-  }
-}
-
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
-}
-
 @include mat.all-component-themes($theme);
+
+// Include custom components partial theme mixins:
 @include footer.theme($theme);
