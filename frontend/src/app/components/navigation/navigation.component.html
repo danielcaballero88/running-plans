@@ -1,0 +1,14 @@
+<div class="navigation-container">
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="toggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side"> Sidenav content </mat-sidenav>
+    <mat-sidenav-content>
+      <!-- Main content -->
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
