@@ -9,13 +9,25 @@ $primary: mat.define-palette(mat.$indigo-palette);
 $accent: mat.define-palette(mat.$pink-palette);
 $warn: mat.define-palette(mat.$red-palette);
 
+$app-typography: mat.define-typography-config(
+  $font-family: 'Nunito',
+);
+
+// Default typography for native header  elements scoped within the
+// .mat-typography CSS class.
+@include mat.typography-hierarchy($app-typography);
+
 $theme: mat.define-light-theme(
   (
-    color: (
-      primary: $primary,
-      accent: $accent,
-      warn: $warn,
+    'color': (
+      'primary': $primary,
+      'accent': $accent,
+      'warn': $warn,
     ),
+    // TODO: this line below will also include typography in the theme, I leave
+    // it commented out for now because I want to know exactly what it does so
+    // I'll wait until I actually need it to see its effects.
+    // "typography": $app-typography,
   )
 );
 
