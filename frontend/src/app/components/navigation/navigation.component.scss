@@ -6,10 +6,13 @@ mat-toolbar {
 mat-sidenav-container {
   position: absolute;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0);
-}
+  width: 100vw;
+  visibility: hidden;
 
-mat-sidenav {
-  min-width: 10vw;
-  height: 100vh;
+  mat-sidenav {
+    min-width: 10vw;
+    height: 100vh;
+    white-space: nowrap;
+    padding: 0.3rem 1rem;
+  }
 }
