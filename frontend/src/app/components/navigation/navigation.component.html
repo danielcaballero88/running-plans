@@ -5,9 +5,13 @@
     </button>
   </mat-toolbar>
 
-  <mat-sidenav-container [class.sidenav-open]="isSidenavOpen">
+  <mat-sidenav-container>
     <mat-sidenav #sidenav mode="side"> Sidenav content </mat-sidenav>
-    <mat-sidenav-content>
+    <mat-sidenav-content
+      [class.sidenav-open]="isSidenavOpen"
+      [@triggerColor]="isSidenavOpen ? 'colored' : 'transparent'"
+      [@triggerVisibility]="isSidenavOpen ? 'visible' : 'hidden'"
+    >
       <!-- Main content -->
     </mat-sidenav-content>
   </mat-sidenav-container>
