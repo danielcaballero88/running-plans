@@ -1,0 +1,33 @@
+p {
+  font-size: 2rem;
+  line-height: 1em;
+  font-weight: 400;
+
+  &.garamond {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  &.bodoni {
+    font-family: 'Libre Bodoni', serif;
+  }
+
+  &.lora {
+    // Century Expanded alternative
+    font-family: 'Lora', serif;
+  }
+
+  &.merriweather {
+    // Times New Roman alternative
+    font-family: 'Merriweather', serif;
+  }
+
+  &.nunito-sans {
+    // Futura alternative
+    font-family: 'Nunito Sans', sans-serif;
+  }
+
+  &.open-sans {
+    // Helvetica alternative
+    font-family: 'Open Sans', sans-serif;
+  }
+}
