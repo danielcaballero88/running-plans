@@ -1,33 +1,12 @@
-p {
-  font-size: 2rem;
-  line-height: 1em;
-  font-weight: 400;
-
-  &.garamond {
-    font-family: 'Cormorant Garamond', serif;
-  }
-
-  &.bodoni {
-    font-family: 'Libre Bodoni', serif;
-  }
-
-  &.lora {
-    // Century Expanded alternative
-    font-family: 'Lora', serif;
-  }
-
-  &.merriweather {
-    // Times New Roman alternative
-    font-family: 'Merriweather', serif;
-  }
-
-  &.nunito-sans {
-    // Futura alternative
-    font-family: 'Nunito Sans', sans-serif;
-  }
-
-  &.open-sans {
-    // Helvetica alternative
-    font-family: 'Open Sans', sans-serif;
-  }
+.container {
+  height: 100%;
+  background:
+    linear-gradient(
+      to right,
+      rgba(rgba(15, 15, 13, 1), 0.4),
+      rgba(rgba(15, 15, 13, 1), 0.1)
+    ),
+    url('/assets/images/track.jpg') center top 20%;
+  background-size: 100vw 100vh;
+  background-position-y: top;
 }
