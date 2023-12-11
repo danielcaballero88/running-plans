@@ -2,11 +2,11 @@ import { Component } from '@angular/core'
 import { PaceChartService } from 'src/app/services/pace-chart.service'
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss'],
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
 })
-export class MainComponent {
+export class HomeComponent {
   constructor(private paceChartService: PaceChartService) {}
 
   ngAfterViewInit() {

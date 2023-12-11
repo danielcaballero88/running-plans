@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
-import { MainComponent } from './components/main/main.component'
+import { HomeComponent } from './components/home/home.component'
 import { HeaderComponent } from './components/header/header.component'
 import { FooterComponent } from './components/footer/footer.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
@@ -13,7 +13,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent,
+    HomeComponent,
     HeaderComponent,
     FooterComponent,
     NavigationComponent,
