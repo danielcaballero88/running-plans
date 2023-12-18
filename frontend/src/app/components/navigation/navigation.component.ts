@@ -1,6 +1,6 @@
+import { animate, state, style, transition, trigger } from '@angular/animations'
 import { Component, ViewChild } from '@angular/core'
 import { MatSidenav } from '@angular/material/sidenav'
-import { trigger, state, style, animate, transition } from '@angular/animations'
 
 @Component({
   selector: 'app-navigation',
