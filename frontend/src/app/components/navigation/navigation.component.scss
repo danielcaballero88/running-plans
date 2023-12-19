@@ -2,6 +2,10 @@ mat-toolbar {
   width: 100vw;
   height: 3rem;
 
+  .menu-btn {
+    position: absolute;
+  }
+
   .logo-container {
     height: 100%;
     flex: 1;

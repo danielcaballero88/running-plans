@@ -10,6 +10,21 @@
     display: flex;
     flex-direction: column;
     z-index: 1;
+    height: 2em;
+  }
+
+  .background {
+    margin-top: 3rem;
+    height: 100%;
+    background:
+      linear-gradient(
+        to right,
+        rgba(rgba(15, 15, 13, 1), 0.4),
+        rgba(rgba(15, 15, 13, 1), 0.1)
+      ),
+      url('/assets/images/track.jpg') center top 20%;
+    background-size: 100vw 100vh;
+    background-position-y: top;
   }
 
   router-outlet {
