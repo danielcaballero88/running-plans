@@ -11,4 +11,8 @@
     flex-direction: column;
     z-index: 1;
   }
+
+  router-outlet {
+    margin-top: 3em;
+  }
 }
