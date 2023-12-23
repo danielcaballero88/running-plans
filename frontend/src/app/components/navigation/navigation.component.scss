@@ -36,5 +36,11 @@ mat-sidenav-container {
     height: 100vh;
     white-space: nowrap;
     padding: 0.3rem 1rem;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: bold;
+    }
   }
 }
