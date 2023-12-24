@@ -1,0 +1,25 @@
+// Import theming functions
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin color($theme) {
+  // Get the color config from the theme.
+  $color-config: mat.get-color-config($theme);
+  // Get the color palettes from the color-config.
+  $primary-palette: map.get($color-config, 'primary');
+  $accent-palette: map.get($color-config, 'accent');
+  // Get the background and text colors
+  $color: mat.get-color-from-palette($primary-palette, 900);
+  $background-color: mat.get-contrast-color-from-palette($accent-palette, 500);
+
+  .welcome {
+    color: $color;
+  }
+}
+
+@mixin theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  @if $color-config != null {
+    @include color($theme);
+  }
+}

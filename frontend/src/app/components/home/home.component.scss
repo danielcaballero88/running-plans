@@ -1,5 +1,5 @@
 :host {
-  height: 100%;
+  height: calc(98vh - 4rem);
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -19,19 +19,26 @@
     }
   }
 
-  .welcome {
-    margin-top: 1em;
+  .get-started-container {
     width: 60%;
-    text-align: center;
-    font-size: 2rem;
-    line-height: 1em;
-    font-weight: 700;
-    margin-bottom: 0.5em;
-  }
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-  button {
-    font-size: 2em;
-    height: 2em;
-    width: 40%;
+    .message {
+      text-align: center;
+      font-size: 2rem;
+      line-height: 1em;
+      font-weight: 700;
+      margin-bottom: 0.5em;
+    }
+
+    button {
+      font-size: 2em;
+      height: 2em;
+      width: 40%;
+    }
   }
 }

@@ -1,13 +1,18 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
 // Import custom components partial theme files:
+@use '../app/components/home/home.component-theme' as home;
 @use '../app/components/footer/footer.component-theme' as footer;
 
 @include mat.core();
 
-$primary: mat.define-palette(mat.$indigo-palette);
-$accent: mat.define-palette(mat.$pink-palette);
-$warn: mat.define-palette(mat.$red-palette);
+// $my-palette: (
+
+// )
+
+$primary: mat.define-palette(mat.$blue-gray-palette);
+$accent: mat.define-palette(mat.$teal-palette);
+$warn: mat.define-palette(mat.$deep-orange-palette);
 
 $app-typography: mat.define-typography-config(
   $font-family: 'Roboto',
@@ -40,4 +45,5 @@ $is-dark-theme: map.get($color-config, 'is-dark');
 @include mat.all-component-themes($theme);
 
 // Include custom components partial theme mixins:
+@include home.theme($theme);
 @include footer.theme($theme);
