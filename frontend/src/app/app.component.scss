@@ -1,7 +1,8 @@
-.main {
+.main-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
+  position: relative;
 
   app-header {
     position: fixed;
@@ -13,7 +14,15 @@
     height: 3rem;
   }
 
+  .main-content {
+    margin-top: 4.5em;
+    height: 80%;
+    position: relative;
+  }
+
   app-footer {
-    height: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
 }
