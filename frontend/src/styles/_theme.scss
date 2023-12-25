@@ -2,6 +2,7 @@
 @use '@angular/material' as mat;
 // Import custom components partial theme files:
 @use '../app/components/home/home.component-theme' as home;
+@use '../app/components/navigation/navigation.component-theme' as navigation;
 @use '../app/components/footer/footer.component-theme' as footer;
 
 @include mat.core();
@@ -46,4 +47,5 @@ $is-dark-theme: map.get($color-config, 'is-dark');
 
 // Include custom components partial theme mixins:
 @include home.theme($theme);
+@include navigation.theme($theme);
 @include footer.theme($theme);

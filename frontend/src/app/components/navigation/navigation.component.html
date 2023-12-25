@@ -14,7 +14,13 @@
 
   <mat-sidenav-container>
     <mat-sidenav #sidenav mode="side">
-      <a routerLink="/home/" (click)="toggleSidenav()" class="nav-item">Home</a>
+      <ul>
+        <li>
+          <a routerLink="/home/" (click)="toggleSidenav()" class="nav-item">
+            Home
+          </a>
+        </li>
+      </ul>
     </mat-sidenav>
     <mat-sidenav-content
       [class.sidenav-open]="isSidenavOpen"
