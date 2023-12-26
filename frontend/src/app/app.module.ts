@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 
+import { MatButtonToggleModule } from '@angular/material/button-toggle'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppMaterialModule } from 'src/app/app-material/app-material.module'
 import { AppRoutingModule } from './app-routing.module'
@@ -25,6 +26,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     AppRoutingModule,
     BrowserAnimationsModule,
     AppMaterialModule,
+    MatButtonToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

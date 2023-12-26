@@ -2,3 +2,11 @@
   height: 100%;
   flex-grow: 1;
 }
+
+.mat-button-toggle-group {
+  margin-left: 12px;
+
+  .mat-button-toggle {
+    width: 5em;
+  }
+}

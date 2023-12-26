@@ -1,0 +1,32 @@
+// Import theming functions
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin color($theme) {
+  // Get the color config from the theme.
+  $color-config: mat.get-color-config($theme);
+  // Get the primary color palette from the color-config.
+  $primary-palette: map.get($color-config, 'primary');
+  $accent-palette: map.get($color-config, 'accent');
+
+  .mat-button-toggle-group {
+    .mat-button-toggle-appearance-standard {
+      &.mat-button-toggle {
+        background-color: mat.get-color-from-palette($primary-palette, 500);
+        color: mat.get-contrast-color-from-palette($primary-palette, 500);
+      }
+
+      &.mat-button-toggle-checked {
+        background-color: mat.get-color-from-palette($accent-palette, 500);
+        color: mat.get-contrast-color-from-palette($accent-palette, 500);
+      }
+    }
+  }
+}
+
+@mixin theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  @if $color-config != null {
+    @include color($theme);
+  }
+}
