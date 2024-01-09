@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { MatButtonToggleModule } from '@angular/material/button-toggle'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppMaterialModule } from 'src/app/app-material/app-material.module'
 import { AppRoutingModule } from './app-routing.module'
@@ -22,11 +25,15 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     GetStartedComponent,
   ],
   imports: [
-    BrowserModule,
+    AppMaterialModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AppMaterialModule,
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatButtonToggleModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
