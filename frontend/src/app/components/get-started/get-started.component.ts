@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { FormControl } from '@angular/forms'
+import { FormControl, FormGroup } from '@angular/forms'
 
 @Component({
   selector: 'app-get-started',
@@ -7,6 +7,12 @@ import { FormControl } from '@angular/forms'
   styleUrls: ['./get-started.component.scss'],
 })
 export class GetStartedComponent {
-  hours = new FormControl('')
-  minutes = new FormControl('')
+  userInputForm = new FormGroup({
+    hours: new FormControl(''),
+    minutes: new FormControl(''),
+  })
+
+  onSubmit() {
+    console.warn(this.userInputForm.value)
+  }
 }

@@ -12,14 +12,18 @@
   </p>
 </div>
 
-<div class="time">
-  <p>What was your time?</p>
-  <mat-form-field class="example-full-width">
-    <mat-label>Hours</mat-label>
-    <input matInput [formControl]="hours" maxlength="2" />
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <mat-label>Minutes</mat-label>
-    <input matInput [formControl]="minutes" maxlength="2" />
-  </mat-form-field>
-</div>
+<form [formGroup]="userInputForm" (ngSubmit)="onSubmit()">
+  <div class="time">
+    <p>What was your time?</p>
+    <mat-form-field class="example-full-width">
+      <mat-label>Hours</mat-label>
+      <input matInput formControlName="hours" maxlength="2" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Minutes</mat-label>
+      <input matInput formControlName="minutes" maxlength="2" />
+    </mat-form-field>
+    <p>Complete the form to enable button.</p>
+    <button type="submit" [disabled]="!userInputForm.valid">Submit</button>
+  </div>
+</form>
