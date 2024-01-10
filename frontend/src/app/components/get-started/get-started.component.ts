@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { FormBuilder } from '@angular/forms'
+import { FormBuilder, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-get-started',
@@ -10,9 +10,9 @@ export class GetStartedComponent {
   constructor(private formBuilder: FormBuilder) {}
 
   userInputForm = this.formBuilder.group({
-    distance: [''],
-    hours: [''],
-    minutes: [''],
+    distance: ['', Validators.required],
+    hours: ['', Validators.required],
+    minutes: ['', Validators.required],
   })
 
   onSubmit() {
