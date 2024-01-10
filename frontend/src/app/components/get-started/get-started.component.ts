@@ -8,6 +8,7 @@ import { FormControl, FormGroup } from '@angular/forms'
 })
 export class GetStartedComponent {
   userInputForm = new FormGroup({
+    distance: new FormControl(''),
     hours: new FormControl(''),
     minutes: new FormControl(''),
   })
