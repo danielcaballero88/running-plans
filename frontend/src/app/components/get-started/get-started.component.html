@@ -28,6 +28,13 @@
       <input matInput formControlName="minutes" maxlength="2" />
     </mat-form-field>
     <p>Complete the form to enable button.</p>
-    <button type="submit" [disabled]="!userInputForm.valid">Submit</button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!userInputForm.valid"
+    >
+      Submit
+    </button>
   </div>
 </form>
