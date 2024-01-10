@@ -11,8 +11,24 @@ export class GetStartedComponent {
 
   userInputForm = this.formBuilder.group({
     distance: ['', Validators.required],
-    hours: ['', Validators.required],
-    minutes: ['', Validators.required],
+    hours: [
+      '',
+      [
+        Validators.required,
+        Validators.maxLength(2),
+        Validators.max(10),
+        Validators.pattern('[0-9]'),
+      ],
+    ],
+    minutes: [
+      '',
+      [
+        Validators.required,
+        Validators.maxLength(2),
+        Validators.max(59),
+        Validators.pattern('[0-9]'),
+      ],
+    ],
   })
 
   onSubmit() {
