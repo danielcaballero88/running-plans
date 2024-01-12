@@ -17,7 +17,7 @@ export class GetStartedComponent {
         Validators.required,
         Validators.maxLength(2),
         Validators.max(10),
-        Validators.pattern('[0-9]'),
+        Validators.pattern(/[0-9]/),
       ],
     ],
     minutes: [
@@ -26,7 +26,7 @@ export class GetStartedComponent {
         Validators.required,
         Validators.maxLength(2),
         Validators.max(59),
-        Validators.pattern('[0-9]'),
+        Validators.pattern(/[0-9]/),
       ],
     ],
   })

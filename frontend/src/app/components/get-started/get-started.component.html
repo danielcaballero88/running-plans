@@ -28,6 +28,9 @@
       <mat-error *ngIf="userInputForm.get('hours')?.errors?.['max']">
         Max value is 10
       </mat-error>
+      <mat-error *ngIf="userInputForm.get('hours')?.errors?.['pattern']">
+        Input should be a number
+      </mat-error>
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <mat-label>Minutes</mat-label>
@@ -37,6 +40,9 @@
       </mat-error>
       <mat-error *ngIf="userInputForm.get('minutes')?.errors?.['max']">
         Max value is 59
+      </mat-error>
+      <mat-error *ngIf="userInputForm.get('minutes')?.errors?.['pattern']">
+        Input should be a number
       </mat-error>
     </mat-form-field>
     <p>Complete the form to enable button.</p>
