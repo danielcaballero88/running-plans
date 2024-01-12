@@ -21,7 +21,7 @@
     <p>What was your time?</p>
     <mat-form-field class="example-full-width">
       <mat-label>Hours</mat-label>
-      <input matInput formControlName="hours" maxlength="2" />
+      <input type="number" matInput formControlName="hours" maxlength="2" />
       <mat-error *ngIf="userInputForm.get('hours')?.errors?.['required']">
         Field is required
       </mat-error>
@@ -34,7 +34,7 @@
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <mat-label>Minutes</mat-label>
-      <input matInput formControlName="minutes" maxlength="2" />
+      <input type="number" matInput formControlName="minutes" maxlength="2" />
       <mat-error *ngIf="userInputForm.get('minutes')?.errors?.['required']">
         Field is required
       </mat-error>
@@ -55,6 +55,9 @@
       Submit
     </button>
   </div>
-  <p>Form Value: {{ userInputForm.value | json }}</p>
-  <p>Form Status: {{ userInputForm.status }}</p>
+  <div class="debug">
+    <p>Debug info:</p>
+    <p>Form Value: {{ userInputForm.value | json }}</p>
+    <p>Form Status: {{ userInputForm.status }}</p>
+  </div>
 </form>
