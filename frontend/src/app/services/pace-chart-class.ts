@@ -15,9 +15,7 @@ export class PaceChart {
     chartsData: ChartsData,
     _10kPace: available10kPacesInData
   ) {
-    console.log('_10kPace', _10kPace)
     const chartData = chartsData[_10kPace]
-    console.log('chartData', chartData)
     return new PaceChart(chartData)
   }
 }

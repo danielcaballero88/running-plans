@@ -20,7 +20,6 @@ export class Pace {
     // Calculate pace
     const secondsTotal = hours * 60 * 60 + minutes * 60
     const secondsPerKm = secondsTotal / distances[distance]
-    console.log('secondsPerKm', secondsPerKm)
 
     const minutesPerKm = Math.floor(secondsPerKm / 60)
     const secondsPerKmRemainder = secondsPerKm % 60
@@ -31,9 +30,8 @@ export class Pace {
     return new Pace(hoursPerKm, minutesPerKmRemainder, secondsPerKmRemainder)
   }
 
-  static fromString(
-    paceString: string
-  ) {
+  static fromString(paceString: string) {
+    // TODO: complete this method when needed
     console.log(paceString.split(':'))
   }
 

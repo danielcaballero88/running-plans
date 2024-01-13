@@ -15,12 +15,8 @@ export class Index {
   }
 
   getFittingPace(pace: string): { givenPace: string; _10kPace: string } {
-    console.log('getFittingPace')
-    console.log('pace', pace)
     // Filter to get only greater paces (slower)
     const filteredPaces = Object.entries(this.index).filter(([key, val]) => {
-      console.log('pace, key', pace, key)
-      console.log('pace <= key', pace <= key)
       return pace <= key
     })
     if (filteredPaces.length === 0) {

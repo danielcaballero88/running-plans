@@ -22,16 +22,12 @@ export class PaceChartService {
   // constructor(http: HttpClient) {}
 
   getPaceChartData(): Observable<ChartObject> {
-    console.log('PaceChartService.getPaceChartData')
     const paceChartData = _getPaceChartData()
-    console.log('paceChartData: ', paceChartData)
     return of<ChartObject>(paceChartData as unknown as ChartObject)
   }
 
   getPaceChartIndexes(): Observable<IndexesData> {
-    console.log('PaceChartService.getPaceChartIndexes')
     const paceChartIndexes = _getPaceChartIndexes()
-    console.log('paceChartIndexes', paceChartIndexes)
     return of<IndexesData>(paceChartIndexes as IndexesData)
   }
 
@@ -40,17 +36,9 @@ export class PaceChartService {
     hours: number,
     minutes: number
   ): PaceChart {
-    console.log('Getting pace chart for input: ', {
-      distance,
-      hours,
-      minutes,
-    })
     const pace = Pace.fromDistanceAndTime(distance, hours, minutes)
-    console.log('Pace: ', pace, pace.toString())
     const index = new Index(distance)
-    console.log('index: ', index.index)
     const _10kPace = index.getFitting10kPace(pace.toString())
-    console.log('Equivalent 10k pace: ', _10kPace)
     const paceChart = PaceChart.fromGiven10kPace(
       _getPaceChartData(),
       _10kPace as available10kPacesInData
