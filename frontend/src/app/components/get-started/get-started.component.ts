@@ -1,5 +1,7 @@
 import { Component } from '@angular/core'
 import { FormBuilder, Validators } from '@angular/forms'
+import { Distance } from 'src/app/services/pace-chart-types'
+import { PaceChartService } from 'src/app/services/pace-chart.service'
 
 @Component({
   selector: 'app-get-started',
@@ -7,7 +9,12 @@ import { FormBuilder, Validators } from '@angular/forms'
   styleUrls: ['./get-started.component.scss'],
 })
 export class GetStartedComponent {
-  constructor(private formBuilder: FormBuilder) {}
+  distanceEnum = Distance
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private paceChartService: PaceChartService
+  ) {}
 
   userInputForm = this.formBuilder.group({
     distance: ['', Validators.required],
@@ -33,5 +40,12 @@ export class GetStartedComponent {
 
   onSubmit() {
     console.warn(this.userInputForm.value)
+    this.paceChartService.getPaceChartData()
+    const { distance, hours, minutes } = this.userInputForm.value
+    this.paceChartService.getPaceChartForInput(
+      distance as Distance,
+      Number(hours),
+      Number(minutes)
+    )
   }
 }

@@ -9,10 +9,10 @@
         aria-label="Font Style"
         formControlName="distance"
       >
-        <mat-button-toggle value="5k">5k</mat-button-toggle>
-        <mat-button-toggle value="10k">10k</mat-button-toggle>
-        <mat-button-toggle value="21k">21k</mat-button-toggle>
-        <mat-button-toggle value="42k">42k</mat-button-toggle>
+        <mat-button-toggle [value]="distanceEnum._5k">5k</mat-button-toggle>
+        <mat-button-toggle [value]="distanceEnum._10k">10k</mat-button-toggle>
+        <mat-button-toggle [value]="distanceEnum._21k">21k</mat-button-toggle>
+        <mat-button-toggle [value]="distanceEnum._42k">42k</mat-button-toggle>
       </mat-button-toggle-group>
     </p>
   </div>
