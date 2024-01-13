@@ -31,6 +31,12 @@ export class Pace {
     return new Pace(hoursPerKm, minutesPerKmRemainder, secondsPerKmRemainder)
   }
 
+  static fromString(
+    paceString: string
+  ) {
+    console.log(paceString.split(':'))
+  }
+
   toString(): string {
     const _toString = (num: number) => num.toString().padStart(2, '0')
     return (

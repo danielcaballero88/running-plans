@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core'
 import { Index } from 'src/app/services/index-class'
-import { Distance } from 'src/app/services/pace-chart-types'
+import { Distance, available10kPacesInData } from 'src/app/services/pace-chart-types'
 import { Pace } from 'src/app/services/pace-class'
 import { data, indexes } from './paceChartData'
+import { PaceChart } from 'src/app/services/pace-chart-class'
 // import { HttpClient } from '@angular/common/http'
 
 @Injectable({
@@ -29,5 +30,6 @@ export class PaceChartService {
     console.log('index: ', index.index)
     const _10kPace = index.getFitting10kPace(pace.toString())
     console.log('Equivalent 10k pace: ', _10kPace)
+    PaceChart.fromGiven10kPace(_10kPace as available10kPacesInData)
   }
 }
