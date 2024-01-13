@@ -1,4 +1,3 @@
-import { Pace } from 'src/app/services/pace-class'
 import { data } from 'src/app/services/paceChartData'
 
 export enum Distance {
@@ -12,14 +11,16 @@ export enum Distance {
 
 export type distanceString = `${Distance}`
 
-export type ChartObjectEntry = { total?: Pace; pace: Pace }
+export type ChartObjectEntry = { total?: string; pace: string }
 
-export type ChartObject = {
-  [key in distanceString]: ChartObjectEntry
-}
+export type ChartObject = { [key in distanceString]: ChartObjectEntry }
+
+export type IndexObject = { [key: string]: string }
+
+export type IndexesData = { [key in distanceString]: IndexObject }
 
 export type available10kPacesInData = keyof typeof data
 
-export type ChartData = {
+export type ChartsData = {
   [key in available10kPacesInData]: ChartObject
 }

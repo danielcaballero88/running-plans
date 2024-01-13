@@ -1,6 +1,8 @@
-import { ChartObject, available10kPacesInData } from 'src/app/services/pace-chart-types'
-import { Pace } from 'src/app/services/pace-class'
-import { data } from 'src/app/services/paceChartData'
+import {
+  ChartObject,
+  ChartsData,
+  available10kPacesInData,
+} from 'src/app/services/pace-chart-types'
 
 export class PaceChart {
   chart: ChartObject
@@ -9,18 +11,13 @@ export class PaceChart {
     this.chart = chart
   }
 
-  static fromGiven10kPace(_10kPace: available10kPacesInData) {
+  static fromGiven10kPace(
+    chartsData: ChartsData,
+    _10kPace: available10kPacesInData
+  ) {
     console.log('_10kPace', _10kPace)
-    const chartData = data[_10kPace]
+    const chartData = chartsData[_10kPace]
     console.log('chartData', chartData)
-    const parsedChartData = Object.entries(chartData).reduce(
-      (acc: {[key: string]: any}, [distance, entry], idx) => {
-        console.log(acc, [distance, entry], idx)
-        acc[distance] = 1
-        return acc
-      },
-      {}
-    )
-    // return new PaceChart(chartData as ChartObject)
+    return new PaceChart(chartData)
   }
 }
