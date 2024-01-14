@@ -1,8 +1,5 @@
-import {
-  ChartObject,
-  ChartsData,
-  available10kPacesInData,
-} from './pace-chart-types'
+import { ChartObject, ChartsData } from 'src/app/types/pace-chart-types'
+import { available10kPacesInData } from '../data'
 
 export class PaceChart {
   chart: ChartObject

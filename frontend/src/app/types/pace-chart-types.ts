@@ -1,4 +1,4 @@
-import { data } from './paceChartData'
+import { available10kPacesInData } from 'src/app/services/pace-chart-service/data'
 
 export enum Distance {
   mile = 'mile',
@@ -18,8 +18,6 @@ export type ChartObject = { [key in distanceString]: ChartObjectEntry }
 export type IndexObject = { [key: string]: string }
 
 export type IndexesData = { [key in distanceString]: IndexObject }
-
-export type available10kPacesInData = keyof typeof data
 
 export type ChartsData = {
   [key in available10kPacesInData]: ChartObject

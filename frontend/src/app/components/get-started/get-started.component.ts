@@ -1,8 +1,8 @@
 import { Component } from '@angular/core'
 import { FormBuilder, Validators } from '@angular/forms'
-import { Distance } from 'src/app/services/pace-chart-types'
-import { PaceChartService } from 'src/app/services/pace-chart.service'
-import { PaceChart } from '../../services/pace-chart-class'
+import { PaceChart } from '../../services/pace-chart-service/models/pace-chart-class'
+import { PaceChartService } from '../../services/pace-chart-service/pace-chart.service'
+import { Distance } from '../../types/pace-chart-types'
 
 @Component({
   selector: 'app-get-started',
@@ -40,6 +40,7 @@ export class GetStartedComponent {
   })
 
   onSubmit() {
+    console.log('onSubmit')
     console.warn(this.userInputForm.value)
     this.paceChartService.getPaceChartData()
     const { distance, hours, minutes } = this.userInputForm.value
@@ -48,6 +49,6 @@ export class GetStartedComponent {
       Number(hours),
       Number(minutes)
     )
-    console.log('onSubmit -> ', paceChart)
+    console.log('paceChart: ', paceChart)
   }
 }
