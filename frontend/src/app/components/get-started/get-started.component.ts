@@ -2,6 +2,7 @@ import { Component } from '@angular/core'
 import { FormBuilder, Validators } from '@angular/forms'
 import { Distance } from 'src/app/services/pace-chart-types'
 import { PaceChartService } from 'src/app/services/pace-chart.service'
+import { PaceChart } from '../../services/pace-chart-class'
 
 @Component({
   selector: 'app-get-started',
@@ -42,10 +43,11 @@ export class GetStartedComponent {
     console.warn(this.userInputForm.value)
     this.paceChartService.getPaceChartData()
     const { distance, hours, minutes } = this.userInputForm.value
-    this.paceChartService.getPaceChartForInput(
+    const paceChart: PaceChart = this.paceChartService.getPaceChartForInput(
       distance as Distance,
       Number(hours),
       Number(minutes)
     )
+    console.log('onSubmit -> ', paceChart)
   }
 }
