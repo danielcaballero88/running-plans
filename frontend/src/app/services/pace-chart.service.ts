@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core'
 import { Observable, of } from 'rxjs'
-import { Index } from 'src/app/services/index-class'
-import { PaceChart } from 'src/app/services/pace-chart-class'
+import {
+  getPaceChartData as _getPaceChartData,
+  getPaceChartIndexes as _getPaceChartIndexes,
+} from './getPaceChartData'
+import { Index } from './index-class'
+import { PaceChart } from './pace-chart-class'
 import {
   ChartObject,
   Distance,
   IndexesData,
   available10kPacesInData,
-} from 'src/app/services/pace-chart-types'
-import { Pace } from 'src/app/services/pace-class'
-import {
-  getPaceChartData as _getPaceChartData,
-  getPaceChartIndexes as _getPaceChartIndexes,
-} from './getPaceChartData'
+} from './pace-chart-types'
+import { Pace } from './pace-class'
 // import { HttpClient } from '@angular/common/http'
 
 @Injectable({

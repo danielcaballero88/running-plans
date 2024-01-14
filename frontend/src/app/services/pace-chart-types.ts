@@ -1,4 +1,4 @@
-import { data } from 'src/app/services/paceChartData'
+import { data } from './paceChartData'
 
 export enum Distance {
   mile = 'mile',

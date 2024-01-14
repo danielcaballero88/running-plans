@@ -2,7 +2,7 @@ import {
   ChartObject,
   ChartsData,
   available10kPacesInData,
-} from 'src/app/services/pace-chart-types'
+} from './pace-chart-types'
 
 export class PaceChart {
   chart: ChartObject

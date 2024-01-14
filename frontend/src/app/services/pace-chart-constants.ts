@@ -1,4 +1,4 @@
-import { Distance } from 'src/app/services/pace-chart-types'
+import { Distance } from './pace-chart-types'
 
 export const distances = {
   [Distance.mile]: 1.6,

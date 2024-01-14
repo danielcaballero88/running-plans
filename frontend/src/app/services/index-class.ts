@@ -1,5 +1,5 @@
-import { Distance } from 'src/app/services/pace-chart-types'
-import { indexes } from 'src/app/services/paceChartData'
+import { Distance } from './pace-chart-types'
+import { indexes } from './paceChartData'
 
 export class Index {
   distance: Distance

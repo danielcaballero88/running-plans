@@ -1,5 +1,5 @@
-import { distances } from 'src/app/services/pace-chart-constants'
-import { Distance } from 'src/app/services/pace-chart-types'
+import { distances } from './pace-chart-constants'
+import { Distance } from './pace-chart-types'
 
 export class Pace {
   hours: number
