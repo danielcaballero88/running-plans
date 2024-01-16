@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms'
 import { PaceChart } from '../../services/pace-chart-service/models/pace-chart-class'
 import { PaceChartService } from '../../services/pace-chart-service/pace-chart.service'
 import { Distance } from '../../types/pace-chart-types'
+import { AppStateService } from 'src/app/services/app-state-service/app-state-service.service'
 
 @Component({
   selector: 'app-get-started',
@@ -14,7 +15,8 @@ export class GetStartedComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private paceChartService: PaceChartService
+    private paceChartService: PaceChartService,
+    private appState: AppStateService,
   ) {}
 
   userInputForm = this.formBuilder.group({
@@ -42,13 +44,21 @@ export class GetStartedComponent {
   onSubmit() {
     console.log('onSubmit')
     console.warn(this.userInputForm.value)
-    this.paceChartService.getPaceChartData()
+
+    // Parse input to proper types and set it in app state
     const { distance, hours, minutes } = this.userInputForm.value
+    const _distance = distance as Distance
+    const _hours = Number(hours)
+    const _minutes = Number(minutes)
+    this.appState.setUserInput({ distance: _distance, hours: _hours, minutes: _minutes })
+
+    // Get pace chart for the given input and set in in app state
     const paceChart: PaceChart = this.paceChartService.getPaceChartForInput(
-      distance as Distance,
-      Number(hours),
-      Number(minutes)
+      _distance,
+      _hours,
+      _minutes
     )
     console.log('paceChart: ', paceChart)
+    this.appState.setPaceChart(paceChart.chart)
   }
 }
