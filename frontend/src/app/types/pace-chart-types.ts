@@ -11,14 +11,16 @@ export enum Distance {
 
 export type distanceString = `${Distance}`
 
-export type ChartObjectEntry = { total?: string; pace: string }
+export type ChartPaceObjectEntry = { total?: string; pace: string }
 
-export type ChartObject = { [key in distanceString]: ChartObjectEntry }
+export type ChartPaceObject = { [key in distanceString]: ChartPaceObjectEntry }
 
-export type IndexObject = { [key: string]: string }
+export type ChartPaceObjects = {
+  [key in available10kPacesInData]: ChartPaceObject
+}
 
-export type IndexesData = { [key in distanceString]: IndexObject }
+export type ChartPaceIndexObject = { [key: string]: string }
 
-export type ChartsData = {
-  [key in available10kPacesInData]: ChartObject
+export type ChartPaceIndexObjects = {
+  [key in distanceString]: ChartPaceIndexObject
 }
