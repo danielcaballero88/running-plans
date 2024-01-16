@@ -14,6 +14,7 @@ import { GetStartedComponent } from './components/get-started/get-started.compon
 import { HeaderComponent } from './components/header/header.component'
 import { HomeComponent } from './components/home/home.component'
 import { NavigationComponent } from './components/navigation/navigation.component'
+import { PaceChartComponent } from './components/pace-chart/pace-chart.component'
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     FooterComponent,
     NavigationComponent,
     GetStartedComponent,
+    PaceChartComponent,
   ],
   imports: [
     AppMaterialModule,
