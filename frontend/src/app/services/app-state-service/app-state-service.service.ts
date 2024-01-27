@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
-import { UserInputObject } from 'src/app/components/get-started/types';
-import { StateObject, stateKey } from 'src/app/services/app-state-service/types';
-import { ChartPaceObject } from 'src/app/types/pace-chart-types';
+import { Injectable } from '@angular/core'
+import { UserInputObject } from 'src/app/components/get-started/types'
+import { StateObject, stateKey } from 'src/app/services/app-state-service/types'
+import { ChartPaceObject } from 'src/app/types/pace-chart-types'
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AppStateService {
   private state: StateObject = {}
@@ -32,9 +32,9 @@ export class AppStateService {
     return this.state[key]
   }
 
-  public getUserInput() {
+  public getUserInput(): UserInputObject | undefined {
     console.log('AppStateService', 'getUserInput')
-    return this.getFromState('userInput')
+    return this.state.userInput
   }
 
   public setUserInput(userInput: UserInputObject) {
@@ -43,9 +43,9 @@ export class AppStateService {
     this.setState()
   }
 
-  public getChartPace() {
+  public getChartPace(): ChartPaceObject | undefined {
     console.log('AppStateService', 'getChartPace')
-    return this.getFromState('paceChart')
+    return this.state.paceChart
   }
 
   public setPaceChart(paceChart: ChartPaceObject) {

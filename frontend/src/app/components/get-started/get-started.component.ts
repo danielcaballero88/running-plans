@@ -1,22 +1,24 @@
-import { Component } from '@angular/core'
+import { Component, OnDestroy, OnInit } from '@angular/core'
 import { FormBuilder, Validators } from '@angular/forms'
+import { UserInputObject } from 'src/app/components/get-started/types'
+import { AppStateService } from 'src/app/services/app-state-service/app-state-service.service'
 import { PaceChart } from '../../services/pace-chart-service/models/pace-chart-class'
 import { PaceChartService } from '../../services/pace-chart-service/pace-chart.service'
 import { Distance } from '../../types/pace-chart-types'
-import { AppStateService } from 'src/app/services/app-state-service/app-state-service.service'
 
 @Component({
   selector: 'app-get-started',
   templateUrl: './get-started.component.html',
   styleUrls: ['./get-started.component.scss'],
 })
-export class GetStartedComponent {
+export class GetStartedComponent implements OnInit, OnDestroy {
   distanceEnum = Distance
+  userInput?: UserInputObject
 
   constructor(
     private formBuilder: FormBuilder,
     private paceChartService: PaceChartService,
-    private appState: AppStateService,
+    private appState: AppStateService
   ) {}
 
   userInputForm = this.formBuilder.group({
@@ -41,6 +43,23 @@ export class GetStartedComponent {
     ],
   })
 
+  ngOnInit(): void {
+    console.log('GetStartedComponent.ngOnInit')
+    // Get current app state
+    this.userInput = this.appState.getUserInput()
+    if (this.userInput) {
+      this.userInputForm.setValue({
+        distance: this.userInput.distance.toString(),
+        hours: this.userInput.hours.toString(),
+        minutes: this.userInput.minutes.toString(),
+      })
+    }
+  }
+
+  ngOnDestroy(): void {
+    console.log('GetStartedComponent.ngOnDestroy')
+  }
+
   onSubmit() {
     console.log('onSubmit')
     console.warn(this.userInputForm.value)
@@ -50,7 +69,11 @@ export class GetStartedComponent {
     const _distance = distance as Distance
     const _hours = Number(hours)
     const _minutes = Number(minutes)
-    this.appState.setUserInput({ distance: _distance, hours: _hours, minutes: _minutes })
+    this.appState.setUserInput({
+      distance: _distance,
+      hours: _hours,
+      minutes: _minutes,
+    })
 
     // Get pace chart for the given input and set in in app state
     const paceChart: PaceChart = this.paceChartService.getPaceChartForInput(
