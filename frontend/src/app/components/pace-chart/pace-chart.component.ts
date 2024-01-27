@@ -13,7 +13,7 @@ export class PaceChartComponent implements OnInit {
 
   constructor(
     private appState: AppStateService,
-    private router: Router
+    private router: Router,
   ) {}
 
   ngOnInit() {

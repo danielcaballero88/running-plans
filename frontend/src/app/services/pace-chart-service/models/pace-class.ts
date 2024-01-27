@@ -15,7 +15,7 @@ export class Pace {
   static fromDistanceAndTime(
     distance: Distance,
     hours: number,
-    minutes: number
+    minutes: number,
   ): Pace {
     // Calculate pace
     const secondsTotal = hours * 60 * 60 + minutes * 60

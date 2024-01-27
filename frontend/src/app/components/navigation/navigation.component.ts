@@ -12,13 +12,13 @@ import { MatSidenav } from '@angular/material/sidenav'
         'colored',
         style({
           backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        })
+        }),
       ),
       state(
         'transparent',
         style({
           backgroundColor: 'rgba(0, 0, 0, 0)',
-        })
+        }),
       ),
       transition('transparent <=> colored', [animate('200ms ease-in-out')]),
     ]),
@@ -27,13 +27,13 @@ import { MatSidenav } from '@angular/material/sidenav'
         'visible',
         style({
           visibility: 'visible',
-        })
+        }),
       ),
       state(
         'hidden',
         style({
           visibility: 'hidden',
-        })
+        }),
       ),
       transition('hidden => visible', [animate('0s')]),
       transition('visible => hidden', [animate('200ms')]),

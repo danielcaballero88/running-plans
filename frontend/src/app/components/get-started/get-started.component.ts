@@ -20,7 +20,7 @@ export class GetStartedComponent implements OnInit, OnDestroy {
     private formBuilder: FormBuilder,
     private paceChartService: PaceChartService,
     private appState: AppStateService,
-    private router: Router
+    private router: Router,
   ) {}
 
   userInputForm = this.formBuilder.group({
@@ -81,7 +81,7 @@ export class GetStartedComponent implements OnInit, OnDestroy {
     const paceChart: PaceChart = this.paceChartService.getPaceChartForInput(
       _distance,
       _hours,
-      _minutes
+      _minutes,
     )
     console.log('paceChart: ', paceChart)
     this.appState.setPaceChart(paceChart.chart)

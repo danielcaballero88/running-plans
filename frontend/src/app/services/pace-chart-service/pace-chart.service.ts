@@ -34,14 +34,14 @@ export class PaceChartService {
   getPaceChartForInput(
     distance: Distance,
     hours: number,
-    minutes: number
+    minutes: number,
   ): PaceChart {
     const pace = Pace.fromDistanceAndTime(distance, hours, minutes)
     const index = new Index(distance)
     const _10kPace = index.getFitting10kPace(pace.toString())
     const paceChart = PaceChart.fromGiven10kPace(
       _getPaceChartData(),
-      _10kPace as available10kPacesInData
+      _10kPace as available10kPacesInData,
     )
 
     return paceChart

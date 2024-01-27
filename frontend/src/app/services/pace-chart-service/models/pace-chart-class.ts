@@ -13,7 +13,7 @@ export class PaceChart {
 
   static fromGiven10kPace(
     chartsData: PaceChartObjects,
-    _10kPace: available10kPacesInData
+    _10kPace: available10kPacesInData,
   ) {
     const chartData = chartsData[_10kPace]
     return new PaceChart(chartData)
