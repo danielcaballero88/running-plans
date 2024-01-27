@@ -1,5 +1,5 @@
 const config = {
-  trailingComma: 'es5',
+  trailingComma: 'es5', // TODO: change to 'all', I like it more
   tabWidth: 2,
   semi: false,
   singleQuote: true,

@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core'
 import { Observable, of } from 'rxjs'
 import {
   ChartPaceIndexObjects,
-  ChartPaceObject,
   Distance,
+  PaceChartObject,
 } from 'src/app/types/pace-chart-types'
 import { available10kPacesInData } from './data'
 import {
@@ -21,9 +21,9 @@ import { Pace } from './models/pace-class'
 export class PaceChartService {
   // constructor(http: HttpClient) {}
 
-  getPaceChartData(): Observable<ChartPaceObject> {
+  getPaceChartData(): Observable<PaceChartObject> {
     const paceChartData = _getPaceChartData()
-    return of<ChartPaceObject>(paceChartData as unknown as ChartPaceObject)
+    return of<PaceChartObject>(paceChartData as unknown as PaceChartObject)
   }
 
   getPaceChartIndexes(): Observable<ChartPaceIndexObjects> {

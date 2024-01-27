@@ -13,10 +13,10 @@ export type distanceString = `${Distance}`
 
 export type ChartPaceObjectEntry = { total?: string; pace: string }
 
-export type ChartPaceObject = { [key in distanceString]: ChartPaceObjectEntry }
+export type PaceChartObject = { [key in distanceString]: ChartPaceObjectEntry }
 
-export type ChartPaceObjects = {
-  [key in available10kPacesInData]: ChartPaceObject
+export type PaceChartObjects = {
+  [key in available10kPacesInData]: PaceChartObject
 }
 
 export type ChartPaceIndexObject = { [key: string]: string }

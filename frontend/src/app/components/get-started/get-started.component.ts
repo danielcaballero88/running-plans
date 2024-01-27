@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
 import { FormBuilder, Validators } from '@angular/forms'
+import { Router } from '@angular/router'
 import { UserInputObject } from 'src/app/components/get-started/types'
 import { AppStateService } from 'src/app/services/app-state-service/app-state-service.service'
 import { PaceChart } from '../../services/pace-chart-service/models/pace-chart-class'
@@ -18,7 +19,8 @@ export class GetStartedComponent implements OnInit, OnDestroy {
   constructor(
     private formBuilder: FormBuilder,
     private paceChartService: PaceChartService,
-    private appState: AppStateService
+    private appState: AppStateService,
+    private router: Router
   ) {}
 
   userInputForm = this.formBuilder.group({
@@ -83,5 +85,7 @@ export class GetStartedComponent implements OnInit, OnDestroy {
     )
     console.log('paceChart: ', paceChart)
     this.appState.setPaceChart(paceChart.chart)
+
+    this.router.navigate(['/pace-chart'])
   }
 }
