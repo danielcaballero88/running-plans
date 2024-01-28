@@ -10,6 +10,9 @@ export class HomeComponent implements AfterViewInit {
   constructor(private paceChartService: PaceChartService) {}
 
   ngAfterViewInit() {
+    // TODO: remove this?
+    console.log('HomeComponent.ngAfterViewInit')
+    console.log('Getting Pace Chart Data')
     this.paceChartService.getPaceChartData()
   }
 }
