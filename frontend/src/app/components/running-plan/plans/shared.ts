@@ -1,7 +1,7 @@
 export enum WorkoutType {
-  SpeedRun = 'SpeedRun',
-  LongRun = 'LongRun',
-  RecoveryRun = 'RecoveryRun',
+  SpeedRun = 'Speed Run',
+  LongRun = 'Long Run',
+  RecoveryRun = 'Recovery Run',
 }
 
 export const workoutTypes = {
@@ -14,11 +14,11 @@ export const workoutTypes = {
 }
 
 export enum RunType {
-  ProgressionRun = 'ProgressionRun',
+  ProgressionRun = 'Progression Run',
   Intervals = 'Intervals',
   Fartlek = 'Fartlek',
   Hills = 'Hills',
-  TempoRun = 'TempoRun',
+  TempoRun = 'Tempo Run',
 }
 
 export const runTypes = {

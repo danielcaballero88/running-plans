@@ -1,1 +1,27 @@
-<p>running-plan works!</p>
+<div *ngIf="runningPlan" class="container">
+  <mat-card *ngFor="let weekObj of runningPlan.plan.weeks">
+    <mat-card-content>
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let runObj of weekObj.runs">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ runObj.title }}
+            </mat-panel-title>
+            <!-- <mat-panel-description>
+              This is a summary of the content
+            </mat-panel-description> -->
+          </mat-expansion-panel-header>
+          <p>
+            Type: {{ runObj.type }}
+            <span *ngIf="runObj.subtype">/ {{ runObj.subtype }}</span>
+          </p>
+          <ul>
+            <li *ngFor="let item of runObj.items">
+              {{ item }}
+            </li>
+          </ul>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,5 +1,5 @@
-import { TimeSpan } from "src/app/models/timeSpan";
-import { Pace } from "src/app/services/pace-chart-service/models/pace-class";
+import { TimeSpan } from 'src/app/models/timeSpan'
+import { Pace } from 'src/app/services/pace-chart-service/models/pace-class'
 
 export class Interval {
   time: TimeSpan
@@ -12,7 +12,7 @@ export class Interval {
     this.pace = pace
   }
 
-  toString(quantity?: number) {
+  toString(quantity?: number): string {
     let output = `${this.time.toString()} at ${this.paceName}`
     if (quantity) {
       output = `${quantity} x ${output}`
