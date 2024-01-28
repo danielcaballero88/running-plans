@@ -1,5 +1,5 @@
 import {
-  ChartPaceIndexObjects,
+  PaceChartIndexObjects,
   PaceChartObjects,
 } from '../../../types/pace-chart-types'
 import { data, indexes } from './paceChartData'
@@ -9,5 +9,5 @@ export function getPaceChartData() {
 }
 
 export function getPaceChartIndexes() {
-  return indexes as ChartPaceIndexObjects
+  return indexes as PaceChartIndexObjects
 }
