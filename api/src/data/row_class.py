@@ -62,7 +62,10 @@ class Row:
                 "marathon": {
                     "total": "<Time 02:44:00>",
                     "pace": "<Time 00:03:53>"
-                }
+                },
+                "recovery: {
+                    "pace": "<Time ...>"
+                },
             }
         """
         # Input times is in the format of the Nike Run Club pace chart.
@@ -88,6 +91,9 @@ class Row:
             Distance.MARATHON: {
                 TimeKind.TOTAL: Time.from_str(values[8]),
                 TimeKind.PACE: Time.from_str(values[9]),
+            },
+            Distance.RECOVERY: {
+                TimeKind.PACE: Time.from_str(values[10]),
             },
         }
         parsed_values_per_km = self.compute_metric(
@@ -134,6 +140,9 @@ class Row:
         )
         metric_data[Distance.MARATHON][TimeKind.PACE] = (
             metric_data[Distance.MARATHON][TimeKind.PACE] / self.mile_to_km
+        )
+        metric_data[Distance.RECOVERY][TimeKind.PACE] = (
+            metric_data[Distance.RECOVERY][TimeKind.PACE] / self.mile_to_km
         )
         return metric_data
 

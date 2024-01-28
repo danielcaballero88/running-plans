@@ -22,6 +22,7 @@ class Distance(str, Enum):
     TEMPO = "tempo"
     HALF_MARATHON = "half_marathon"
     MARATHON = "marathon"
+    RECOVERY = "recovery"
 
     @classmethod
     def get_by_value(cls, val: str) -> Distance:
