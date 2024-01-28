@@ -31,8 +31,22 @@ export class Pace {
   }
 
   static fromString(paceString: string) {
-    // TODO: complete this method when needed
-    console.log(paceString.split(':'))
+    const parts = paceString.split(':').map((x) => Number(x))
+    let seconds = 0
+    let minutes = 0
+    let hours = 0
+    if (parts.length === 2) {
+      seconds = parts[0]
+      minutes = parts[1]
+      hours = 0
+    } else if (parts.length === 3) {
+      seconds = parts[0]
+      minutes = parts[1]
+      hours = parts[2]
+    } else {
+      throw Error(`wrong type span given: ${paceString}`)
+    }
+    return new Pace(hours, minutes, seconds)
   }
 
   toString(): string {

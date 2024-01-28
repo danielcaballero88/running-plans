@@ -11,7 +11,8 @@ import { GetStartedComponent } from './components/get-started/get-started.compon
 import { HeaderComponent } from './components/header/header.component'
 import { HomeComponent } from './components/home/home.component'
 import { NavigationComponent } from './components/navigation/navigation.component'
-import { PaceChartComponent } from './components/pace-chart/pace-chart.component'
+import { PaceChartComponent } from './components/pace-chart/pace-chart.component';
+import { RunningPlanComponent } from './components/running-plan/running-plan.component'
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PaceChartComponent } from './components/pace-chart/pace-chart.component
     NavigationComponent,
     GetStartedComponent,
     PaceChartComponent,
+    RunningPlanComponent,
   ],
   imports: [
     AppMaterialModule,
