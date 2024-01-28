@@ -10,19 +10,19 @@
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
 
-    <!-- Position Column -->
+    <!-- Distance Column -->
     <ng-container matColumnDef="distance">
       <th mat-header-cell *matHeaderCellDef>Distance</th>
       <td mat-cell *matCellDef="let element">{{ element.distance }}</td>
     </ng-container>
 
-    <!-- Name Column -->
+    <!-- Total Column -->
     <ng-container matColumnDef="total">
       <th mat-header-cell *matHeaderCellDef>Total</th>
       <td mat-cell *matCellDef="let element">{{ element.total }}</td>
     </ng-container>
 
-    <!-- Weight Column -->
+    <!-- Pace Column -->
     <ng-container matColumnDef="pace">
       <th mat-header-cell *matHeaderCellDef>Pace</th>
       <td mat-cell *matCellDef="let element">{{ element.pace }}</td>
