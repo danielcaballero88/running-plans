@@ -1,65 +1,46 @@
-import { Interval } from 'src/app/components/running-plan/plans/intervals-class'
 import {
+  Plan,
   RunType,
   WorkoutType,
 } from 'src/app/components/running-plan/plans/shared'
 import { TimeSpan } from 'src/app/models/timeSpan'
-import { Pace } from 'src/app/services/pace-chart-service/models/pace-class'
-import { PaceChartObject } from 'src/app/types/pace-chart-types'
+import { Distance } from 'src/app/types/pace-chart-types'
 
-interface RunObj {
-  title: string
-  type: WorkoutType
-  subtype?: RunType
-  items: string[]
-  pace: string
-}
-
-interface WeekObj {
-  weeksToGo: number
-  runs: RunObj[]
-}
-
-interface Plan {
-  weeks: WeekObj[]
-}
-
-export class Plan5K {
-  paceChartObject: PaceChartObject
-  plan: Plan
-
-  constructor(paceChartObject: PaceChartObject) {
-    this.paceChartObject = paceChartObject
-
-    this.plan = {
-      weeks: [
+export const plan5k: Plan = {
+  weeks: [
+    {
+      weeksToGo: 8,
+      runs: [
         {
-          weeksToGo: 8,
-          runs: [
+          title: '5 Minute Run',
+          type: WorkoutType.RecoveryRun,
+          subtype: undefined,
+          items: [
             {
-              title: '5 Minute Run',
-              type: WorkoutType.RecoveryRun,
-              subtype: undefined,
-              items: ['5:00 Recovery Run'],
-              pace: this.paceChartObject.recovery.pace,
+              type: 'run',
+              // title: '5:00 Recovery Run',
+              time: new TimeSpan(0, 5, 0),
+              paceFor: Distance.recovery,
+            },
+          ],
+        },
+        {
+          title: 'First Speed Run',
+          type: WorkoutType.SpeedRun,
+          subtype: RunType.Intervals,
+          items: [
+            {
+              type: 'interval',
+              time: new TimeSpan(0, 5, 0),
+              paceFor: Distance._5k,
             },
             {
-              title: 'First Speed Run',
-              type: WorkoutType.SpeedRun,
-              subtype: RunType.Intervals,
-              items: [
-                new Interval(
-                  new TimeSpan(0, 5, 0),
-                  '5K Pace',
-                  Pace.fromString(this.paceChartObject['5k'].pace),
-                ).toString(8),
-                '1:00 Recovery between intervals',
-              ],
-              pace: this.paceChartObject['5k'].pace,
+              type: 'message',
+              msg: '1:00 Recovery between intervals',
             },
           ],
         },
       ],
-    }
-  }
+    },
+  ],
 }

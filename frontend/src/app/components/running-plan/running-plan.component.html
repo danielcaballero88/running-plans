@@ -1,4 +1,4 @@
-<div *ngIf="runningPlan" class="container">
+<div *ngIf="runningPlan && runningPlan.plan" class="container">
   <mat-card *ngFor="let weekObj of runningPlan.plan.weeks">
     <mat-card-content>
       <mat-accordion>
@@ -17,7 +17,11 @@
           </p>
           <ul>
             <li *ngFor="let item of runObj.items">
-              {{ item }}
+              <ng-container [ngSwitch]="item.type">
+                <span *ngSwitchCase="'run'">
+                  {{ item.time?.toString() }} run - pace: {{ item.paceFor }}
+                </span>
+              </ng-container>
             </li>
           </ul>
         </mat-expansion-panel>

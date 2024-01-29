@@ -1,3 +1,6 @@
+import { TimeSpan } from 'src/app/models/timeSpan'
+import { Distance } from 'src/app/types/pace-chart-types'
+
 export enum WorkoutType {
   SpeedRun = 'Speed Run',
   LongRun = 'Long Run',
@@ -32,4 +35,27 @@ export const runTypes = {
     'Hill workouts develop speed and form. It takes extra effort to run uphill so you do not need to run as fast as you would on a flat section. While running uphill, remain in control of your breathing. Don’t lean too far forward. A light lean with the chin leading the chest is enough. Running up hills is a great way to develop speed and strength with minimal pounding on the legs. It’s best to use effort as a guide rather than pace when doing a hill workout.',
   [RunType.TempoRun]:
     'A Tempo Run is a hard but controlled pace that can be run as long intervals or a steady run of 1-10 miles. The purpose of a Tempo Run is to build mental and physical endurance and to become comfortable with being uncomfortable.',
+}
+
+export interface RunItemObj {
+  type: 'interval' | 'message' | 'run'
+  time?: TimeSpan
+  paceFor?: Distance
+  msg?: string
+}
+
+export interface RunObj {
+  title: string
+  type: WorkoutType
+  subtype?: RunType
+  items: RunItemObj[]
+}
+
+export interface WeekObj {
+  weeksToGo: number
+  runs: RunObj[]
+}
+
+export interface Plan {
+  weeks: WeekObj[]
 }
