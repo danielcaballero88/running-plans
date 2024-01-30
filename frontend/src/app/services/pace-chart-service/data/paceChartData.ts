@@ -401,7 +401,7 @@ export const data = {
       pace: '00:07:52',
     },
     '10k': {
-      total: '00:81:30',
+      total: '01:21:30',
       pace: '00:08:07',
     },
     tempo: {

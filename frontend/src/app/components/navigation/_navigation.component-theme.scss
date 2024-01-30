@@ -17,7 +17,7 @@
       ul {
         li {
           a {
-            color: mat.get-color-from-palette($primary-palette, 900);
+            color: mat.get-color-from-palette($primary-palette, 700);
             &:active {
               color: mat.get-color-from-palette($accent-palette, 900);
             }

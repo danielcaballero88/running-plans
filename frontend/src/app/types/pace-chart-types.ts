@@ -10,11 +10,11 @@ export enum Distance {
   recovery = 'recovery',
 }
 
-export type distanceString = `${Distance}`
+export type DistanceString = `${Distance}`
 
 export type PaceChartObjectEntry = { total?: string; pace: string }
 
-export type PaceChartObject = { [key in distanceString]: PaceChartObjectEntry }
+export type PaceChartObject = { [key in DistanceString]: PaceChartObjectEntry }
 
 export type PaceChartObjects = {
   [key in available10kPacesInData]: PaceChartObject
@@ -23,5 +23,5 @@ export type PaceChartObjects = {
 export type PaceChartIndexObject = { [key: string]: string }
 
 export type PaceChartIndexObjects = {
-  [key in distanceString]: PaceChartIndexObject
+  [key in DistanceString]: PaceChartIndexObject
 }

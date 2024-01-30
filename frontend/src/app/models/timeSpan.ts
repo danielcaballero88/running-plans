@@ -4,9 +4,16 @@ export class TimeSpan {
   hours: number
 
   constructor(seconds: number, minutes: number, hours: number) {
-    this.seconds = seconds
-    this.minutes = minutes
-    this.hours = hours
+    // Recalculate
+    const secondsTotal = hours * 60 * 60 + minutes * 60 + seconds
+    const secondsRemainder = secondsTotal % 60
+    const minutesTotal = Math.floor(secondsTotal / 60)
+    const minutesRemainder = minutesTotal % 60
+    const hoursTotal = Math.floor(minutesTotal / 60)
+
+    this.hours = hoursTotal
+    this.minutes = minutesRemainder
+    this.seconds = secondsRemainder
   }
 
   /**
@@ -16,7 +23,9 @@ export class TimeSpan {
    * 2. Without hour: mm:ss
    */
   static fromString(stringTimeSpan: string) {
+    console.log('fromString', stringTimeSpan)
     const parts = stringTimeSpan.split(':').map((x) => Number(x))
+    console.log('parts', parts)
     let seconds = 0
     let minutes = 0
     let hours = 0
@@ -39,14 +48,16 @@ export class TimeSpan {
   }
 
   toString() {
+    let result: string
     if (this.hours === 0) {
-      return `${this.formatNumber(this.minutes)}:${this.formatNumber(
+      result = `${this.formatNumber(this.minutes)}:${this.formatNumber(
         this.seconds,
       )}`
     } else {
-      return `${this.formatNumber(this.hours)}:${this.formatNumber(
+      result = `${this.formatNumber(this.hours)}:${this.formatNumber(
         this.minutes,
       )}:${this.formatNumber(this.seconds)}`
     }
+    return result.replace(/^0+/, '')
   }
 }
