@@ -3,7 +3,6 @@ import {
   RunType,
   WorkoutType,
 } from 'src/app/components/running-plan/plans/shared'
-import { TimeSpan } from 'src/app/models/timeSpan'
 import { Distance } from 'src/app/types/pace-chart-types'
 
 export const plan5k: Plan = {
@@ -18,8 +17,7 @@ export const plan5k: Plan = {
           items: [
             {
               type: 'run',
-              // title: '5:00 Recovery Run',
-              time: new TimeSpan(0, 5, 0),
+              time: '5:00',
               paceFor: Distance.recovery,
             },
           ],
@@ -31,7 +29,8 @@ export const plan5k: Plan = {
           items: [
             {
               type: 'interval',
-              time: new TimeSpan(0, 5, 0),
+              amount: 8,
+              time: '1:00',
               paceFor: Distance._5k,
             },
             {
