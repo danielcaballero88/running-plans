@@ -80,6 +80,7 @@ export class RunningPlan {
           type: RunItemType.Message,
           msg: `${item.amount} x ${item.time} at ${item.paceType} Pace`,
         }
+        parsedItem.msg = this.addPaceToMsg(parsedItem.msg, item.paceType)
         break
       case RunItemType.DistanceInterval:
         parsedItem = {
