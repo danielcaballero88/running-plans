@@ -1,4 +1,6 @@
 <div *ngIf="runningPlan && runningPlan.plan" class="container">
+  <h1>Here is your running plan:</h1>
+
   <mat-card *ngFor="let weekObj of runningPlan.plan.weeks">
     <mat-card-content>
       <p>{{ weekObj.weeksToGo }} weeks to go</p>
