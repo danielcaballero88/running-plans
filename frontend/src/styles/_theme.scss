@@ -12,8 +12,9 @@
 
 // )
 
-$primary: mat.define-palette(mat.$blue-gray-palette);
-$accent: mat.define-palette(mat.$teal-palette);
+// https://m2.material.io/design/color/the-color-system.html#tools-for-picking-colors
+$primary: mat.define-palette(mat.$blue-palette);
+$accent: mat.define-palette(mat.$cyan-palette);
 $warn: mat.define-palette(mat.$deep-orange-palette);
 
 $app-typography: mat.define-typography-config(
