@@ -1,8 +1,20 @@
+import { PaceType } from 'src/app/components/running-plan/plans/types'
+import { TimeSpan } from 'src/app/models/timeSpan'
 import {
+  Distance,
   PaceChartObject,
   PaceChartObjects,
 } from 'src/app/types/pace-chart-types'
 import { available10kPacesInData } from '../data'
+
+const pacetypeToDistance = {
+  [PaceType.Best]: 'Best',
+  [PaceType.Mile]: Distance.mile,
+  [PaceType._5K]: Distance._5k,
+  [PaceType._10K]: Distance._10k,
+  [PaceType.Tempo]: Distance.tempo,
+  [PaceType.Recovery]: Distance.recovery,
+}
 
 export class PaceChart {
   chart: PaceChartObject
@@ -17,5 +29,15 @@ export class PaceChart {
   ) {
     const chartData = chartsData[_10kPace]
     return new PaceChart(chartData)
+  }
+
+  getPaceForPacetype(paceType: PaceType): string {
+    if (paceType === PaceType.Best) {
+      return 'Best'
+    }
+    const distance = pacetypeToDistance[paceType]
+    const pace = this.chart[distance].pace
+    const parsedPace = TimeSpan.fromString(pace).toString()
+    return parsedPace
   }
 }

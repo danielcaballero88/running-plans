@@ -1,9 +1,9 @@
 import {
+  PaceType,
   Plan,
   RunType,
   WorkoutType,
-} from 'src/app/components/running-plan/plans/shared'
-import { Distance } from 'src/app/types/pace-chart-types'
+} from 'src/app/components/running-plan/plans/types'
 
 export const plan5k: Plan = {
   weeks: [
@@ -18,7 +18,7 @@ export const plan5k: Plan = {
             {
               type: 'run',
               time: '5:00',
-              paceFor: Distance.recovery,
+              paceType: PaceType.Recovery,
             },
           ],
         },
@@ -31,7 +31,7 @@ export const plan5k: Plan = {
               type: 'interval',
               amount: 8,
               time: '1:00',
-              paceFor: Distance._5k,
+              paceType: PaceType._5K,
             },
             {
               type: 'message',
@@ -47,7 +47,7 @@ export const plan5k: Plan = {
             {
               type: 'run',
               time: '5:00',
-              paceFor: Distance.recovery,
+              paceType: PaceType.Recovery,
             },
           ],
         },
@@ -63,48 +63,48 @@ export const plan5k: Plan = {
             {
               type: 'interval',
               time: '1:00',
-              paceFor: Distance._5k,
+              paceType: PaceType._5K,
             },
             {
               type: 'interval',
               time: '2:00',
-              paceFor: Distance._10k,
+              paceType: PaceType._10K,
             },
             {
               type: 'interval',
               time: '1:00',
-              paceFor: Distance._5k,
+              paceType: PaceType._5K,
             },
             {
               type: 'interval',
               amount: 2,
               time: '0:45',
-              paceFor: Distance.mile,
+              paceType: PaceType.Mile,
             },
             {
               type: 'interval',
               time: '2:00',
-              paceFor: Distance._10k,
+              paceType: PaceType._10K,
             },
             {
               type: 'interval',
               time: '1:00',
-              paceFor: Distance._5k,
+              paceType: PaceType._5K,
             },
             {
               type: 'interval',
               time: '0:45',
-              paceFor: Distance.mile,
+              paceType: PaceType.Mile,
             },
             {
               type: 'interval',
               time: '0:30',
-              paceFor: Distance.mile, // TODO: change for 'best'
+              paceType: PaceType.Best,
             },
             {
               type: 'interval',
               time: '0:15',
-              paceFor: Distance.mile, // TODO: change for 'best'
+              paceType: PaceType.Best,
             },
             {
               type: 'message',

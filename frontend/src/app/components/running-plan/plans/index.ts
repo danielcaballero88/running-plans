@@ -1,20 +1,22 @@
 import { plan5k } from 'src/app/components/running-plan/plans/5k'
 import {
+  PaceType,
   Plan,
   RunItemObj,
   RunObj,
   WeekObj,
-} from 'src/app/components/running-plan/plans/shared'
+} from 'src/app/components/running-plan/plans/types'
+import { PaceChart } from 'src/app/services/pace-chart-service/models/pace-chart-class'
 import { Distance, PaceChartObject } from 'src/app/types/pace-chart-types'
 
 export class RunningPlan {
   distance: Distance
-  paceChartObject: PaceChartObject
+  paceChart: PaceChart
   plan?: Plan
 
   constructor(distance: Distance, paceChartObject: PaceChartObject) {
     this.distance = distance
-    this.paceChartObject = paceChartObject
+    this.paceChart = new PaceChart(paceChartObject)
 
     switch (distance) {
       case Distance._5k:
@@ -54,27 +56,23 @@ export class RunningPlan {
         case 'run':
           parsedItem = {
             type: 'message',
-            msg: `${item.time} ${item.paceFor} Pace (${
-              this.paceChartObject[item.paceFor].pace
-            })`,
+            msg: `${item.time} ${item.paceType} Pace`,
           }
+          parsedItem.msg = this.addPaceToMsg(parsedItem.msg, item.paceType)
           break
         case 'interval':
           if (item.amount) {
             parsedItem = {
               type: 'message',
-              msg: `${item.amount} x ${item.time} ${item.paceFor} Pace (${
-                this.paceChartObject[item.paceFor].pace
-              })`,
+              msg: `${item.amount} x ${item.time} ${item.paceType} Pace`,
             }
           } else {
             parsedItem = {
               type: 'message',
-              msg: `${item.time} ${item.paceFor} Pace (${
-                this.paceChartObject[item.paceFor].pace
-              })`,
+              msg: `${item.time} ${item.paceType} Pace`,
             }
           }
+          parsedItem.msg = this.addPaceToMsg(parsedItem.msg, item.paceType)
           break
         case 'message':
           parsedItem = { ...item }
@@ -83,5 +81,12 @@ export class RunningPlan {
       parsedItems.push(parsedItem)
     })
     return { ...runObj, items: parsedItems }
+  }
+
+  private addPaceToMsg(msg: string, paceType: PaceType): string {
+    if (paceType === PaceType.Best) {
+      return msg
+    }
+    return `${msg} (${this.paceChart.getPaceForPacetype(paceType)})`
   }
 }

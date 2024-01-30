@@ -1,5 +1,3 @@
-import { Distance } from 'src/app/types/pace-chart-types'
-
 export enum WorkoutType {
   SpeedRun = 'Speed Run',
   LongRun = 'Long Run',
@@ -36,17 +34,26 @@ export const runTypes = {
     'A Tempo Run is a hard but controlled pace that can be run as long intervals or a steady run of 1-10 miles. The purpose of a Tempo Run is to build mental and physical endurance and to become comfortable with being uncomfortable.',
 }
 
+export enum PaceType {
+  Best = 'Best',
+  Mile = 'Mile',
+  _5K = '5K',
+  _10K = '10K',
+  Tempo = 'Tempo',
+  Recovery = 'Recovery',
+}
+
 interface IntervalRunItemObj {
   type: 'interval'
   time: string
   amount?: number
-  paceFor: Distance
+  paceType: PaceType
 }
 
 interface RunRunItemObj {
   type: 'run'
   time: string
-  paceFor: Distance
+  paceType: PaceType
 }
 
 interface MessageRunItemObj {

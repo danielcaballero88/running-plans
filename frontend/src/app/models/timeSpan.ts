@@ -21,13 +21,13 @@ export class TimeSpan {
     let minutes = 0
     let hours = 0
     if (parts.length === 2) {
-      seconds = parts[0]
-      minutes = parts[1]
+      seconds = parts[1]
+      minutes = parts[0]
       hours = 0
     } else if (parts.length === 3) {
-      seconds = parts[0]
+      seconds = parts[2]
       minutes = parts[1]
-      hours = parts[2]
+      hours = parts[0]
     } else {
       throw Error(`wrong type span given: ${stringTimeSpan}`)
     }
