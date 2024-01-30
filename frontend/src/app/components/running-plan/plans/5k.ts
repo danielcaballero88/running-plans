@@ -1,6 +1,7 @@
 import {
   PaceType,
   Plan,
+  RunItemType,
   RunType,
   WorkoutType,
 } from 'src/app/components/running-plan/plans/types'
@@ -16,7 +17,7 @@ export const plan5k: Plan = {
           subtype: undefined,
           items: [
             {
-              type: 'run',
+              type: RunItemType.Run,
               time: '5:00',
               paceType: PaceType.Recovery,
             },
@@ -28,13 +29,13 @@ export const plan5k: Plan = {
           subtype: RunType.Intervals,
           items: [
             {
-              type: 'interval',
+              type: RunItemType.TimeIntervals,
               amount: 8,
               time: '1:00',
               paceType: PaceType._5K,
             },
             {
-              type: 'message',
+              type: RunItemType.Message,
               msg: '1:00 Recovery between intervals',
             },
           ],
@@ -45,7 +46,7 @@ export const plan5k: Plan = {
           subtype: undefined,
           items: [
             {
-              type: 'run',
+              type: RunItemType.Run,
               time: '5:00',
               paceType: PaceType.Recovery,
             },
@@ -57,57 +58,57 @@ export const plan5k: Plan = {
           subtype: RunType.Intervals,
           items: [
             {
-              type: 'message',
+              type: RunItemType.Message,
               msg: '5:00 Warm Up',
             },
             {
-              type: 'interval',
+              type: RunItemType.TimeInterval,
               time: '1:00',
               paceType: PaceType._5K,
             },
             {
-              type: 'interval',
+              type: RunItemType.TimeInterval,
               time: '2:00',
               paceType: PaceType._10K,
             },
             {
-              type: 'interval',
+              type: RunItemType.TimeInterval,
               time: '1:00',
               paceType: PaceType._5K,
             },
             {
-              type: 'interval',
+              type: RunItemType.TimeIntervals,
               amount: 2,
               time: '0:45',
               paceType: PaceType.Mile,
             },
             {
-              type: 'interval',
+              type: RunItemType.TimeInterval,
               time: '2:00',
               paceType: PaceType._10K,
             },
             {
-              type: 'interval',
+              type: RunItemType.TimeInterval,
               time: '1:00',
               paceType: PaceType._5K,
             },
             {
-              type: 'interval',
+              type: RunItemType.TimeInterval,
               time: '0:45',
               paceType: PaceType.Mile,
             },
             {
-              type: 'interval',
+              type: RunItemType.TimeInterval,
               time: '0:30',
               paceType: PaceType.Best,
             },
             {
-              type: 'interval',
+              type: RunItemType.TimeInterval,
               time: '0:15',
               paceType: PaceType.Best,
             },
             {
-              type: 'message',
+              type: RunItemType.Message,
               msg: '1:00 Recovery between intervals',
             },
           ],
@@ -118,8 +119,9 @@ export const plan5k: Plan = {
           subtype: undefined,
           items: [
             {
-              type: 'message',
-              msg: '1.6k / One Mile Run', // TODO: change to have 'distance' instead of 'time' and parse it correctly
+              type: RunItemType.DistanceInterval,
+              distance: '1.6km',
+              paceType: PaceType.Mile,
             },
           ],
         },

@@ -43,25 +43,59 @@ export enum PaceType {
   Recovery = 'Recovery',
 }
 
-interface IntervalRunItemObj {
-  type: 'interval'
+export enum RunItemType {
+  TimeInterval = 'time interval',
+  TimeIntervals = 'time intervals',
+  DistanceInterval = 'distance interval',
+  DistanceIntervals = 'distance intervals',
+  Run = 'run',
+  Message = 'message',
+}
+
+interface TimeIntervalRunItemObj {
+  type: RunItemType.TimeInterval
   time: string
-  amount?: number
   paceType: PaceType
 }
 
+interface TimeIntervalsRunItemObj {
+  type: RunItemType.TimeIntervals
+  time: string
+  paceType: PaceType
+  amount: number
+}
+
+interface DistanceIntervalRunItemObj {
+  type: RunItemType.DistanceInterval
+  distance: string
+  paceType: PaceType
+}
+
+interface DistanceIntervalsRunItemObj {
+  type: RunItemType.DistanceIntervals
+  distance: string
+  paceType: PaceType
+  amount: number
+}
+
 interface RunRunItemObj {
-  type: 'run'
+  type: RunItemType.Run
   time: string
   paceType: PaceType
 }
 
 interface MessageRunItemObj {
-  type: 'message'
+  type: RunItemType.Message
   msg: string
 }
 
-export type RunItemObj = IntervalRunItemObj | RunRunItemObj | MessageRunItemObj
+export type RunItemObj =
+  | TimeIntervalRunItemObj
+  | TimeIntervalsRunItemObj
+  | DistanceIntervalRunItemObj
+  | DistanceIntervalsRunItemObj
+  | RunRunItemObj
+  | MessageRunItemObj
 
 export interface RunObj {
   title: string

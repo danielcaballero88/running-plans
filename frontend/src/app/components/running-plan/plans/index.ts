@@ -3,6 +3,7 @@ import {
   PaceType,
   Plan,
   RunItemObj,
+  RunItemType,
   RunObj,
   WeekObj,
 } from 'src/app/components/running-plan/plans/types'
@@ -51,36 +52,49 @@ export class RunningPlan {
     console.log('parseRun')
     const parsedItems: RunItemObj[] = []
     runObj.items.forEach((item) => {
-      let parsedItem: RunItemObj
-      switch (item.type) {
-        case 'run':
-          parsedItem = {
-            type: 'message',
-            msg: `${item.time} ${item.paceType} Pace`,
-          }
-          parsedItem.msg = this.addPaceToMsg(parsedItem.msg, item.paceType)
-          break
-        case 'interval':
-          if (item.amount) {
-            parsedItem = {
-              type: 'message',
-              msg: `${item.amount} x ${item.time} ${item.paceType} Pace`,
-            }
-          } else {
-            parsedItem = {
-              type: 'message',
-              msg: `${item.time} ${item.paceType} Pace`,
-            }
-          }
-          parsedItem.msg = this.addPaceToMsg(parsedItem.msg, item.paceType)
-          break
-        case 'message':
-          parsedItem = { ...item }
-          break
-      }
+      const parsedItem = this.parseRunItem(item)
       parsedItems.push(parsedItem)
     })
     return { ...runObj, items: parsedItems }
+  }
+
+  private parseRunItem(item: RunItemObj) {
+    let parsedItem: RunItemObj
+    switch (item.type) {
+      case RunItemType.Run:
+        parsedItem = {
+          type: RunItemType.Message,
+          msg: `${item.time} at ${item.paceType} Pace`,
+        }
+        parsedItem.msg = this.addPaceToMsg(parsedItem.msg, item.paceType)
+        break
+      case RunItemType.TimeInterval:
+        parsedItem = {
+          type: RunItemType.Message,
+          msg: `${item.time} at ${item.paceType} Pace`,
+        }
+        parsedItem.msg = this.addPaceToMsg(parsedItem.msg, item.paceType)
+        break
+      case RunItemType.TimeIntervals:
+        parsedItem = {
+          type: RunItemType.Message,
+          msg: `${item.amount} x ${item.time} at ${item.paceType} Pace`,
+        }
+        break
+      case RunItemType.DistanceInterval:
+        parsedItem = {
+          type: RunItemType.Message,
+          msg: `${item.distance} at ${item.paceType} Pace`,
+        }
+        parsedItem.msg = this.addPaceToMsg(parsedItem.msg, item.paceType)
+        break
+      case RunItemType.Message:
+        parsedItem = { ...item }
+        break
+      default:
+        throw new Error(`Wrong running item: ${JSON.stringify(item)}`)
+    }
+    return parsedItem
   }
 
   private addPaceToMsg(msg: string, paceType: PaceType): string {
