@@ -68,6 +68,12 @@ export class RunningPlan {
         }
         parsedItem.msg = this.addPaceToMsg(parsedItem.msg, item.paceType)
         break
+      case RunItemType.LongRun:
+        parsedItem = {
+          type: RunItemType.Message,
+          msg: `${item.time} Run (at comfortable pace)`,
+        }
+        break
       case RunItemType.TimeInterval:
         parsedItem = {
           type: RunItemType.Message,
@@ -99,7 +105,7 @@ export class RunningPlan {
   }
 
   private addPaceToMsg(msg: string, paceType: PaceType): string {
-    if (paceType === PaceType.Best) {
+    if ([PaceType.Best, PaceType.WarmUp].includes(paceType)) {
       return msg
     }
     return `${msg} (${this.paceChart.getPaceForPacetype(paceType)})`

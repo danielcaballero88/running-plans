@@ -36,6 +36,7 @@ export const runTypes = {
 
 export enum PaceType {
   Best = 'Best',
+  WarmUp = 'WarmUp',
   Mile = 'Mile',
   _5K = '5K',
   _10K = '10K',
@@ -49,6 +50,7 @@ export enum RunItemType {
   DistanceInterval = 'distance interval',
   DistanceIntervals = 'distance intervals',
   Run = 'run',
+  LongRun = 'long run',
   Message = 'message',
 }
 
@@ -84,6 +86,11 @@ interface RunRunItemObj {
   paceType: PaceType
 }
 
+interface LongRunRunItemObj {
+  type: RunItemType.LongRun
+  time: string
+}
+
 interface MessageRunItemObj {
   type: RunItemType.Message
   msg: string
@@ -95,6 +102,7 @@ export type RunItemObj =
   | DistanceIntervalRunItemObj
   | DistanceIntervalsRunItemObj
   | RunRunItemObj
+  | LongRunRunItemObj
   | MessageRunItemObj
 
 export interface RunObj {

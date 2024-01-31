@@ -127,5 +127,153 @@ export const plan5k: Plan = {
         },
       ],
     },
+    {
+      weeksToGo: 7,
+      runs: [
+        {
+          type: WorkoutType.RecoveryRun,
+          title: 'Ten Minute Run',
+          items: [
+            {
+              type: RunItemType.Run,
+              time: '10:00',
+              paceType: PaceType.Recovery,
+            },
+          ],
+        },
+        {
+          title: 'On the Move',
+          type: WorkoutType.SpeedRun,
+          subtype: RunType.Intervals,
+          items: [
+            {
+              type: RunItemType.Message,
+              msg: '5:00 Warm Up',
+            },
+            {
+              type: RunItemType.TimeInterval,
+              time: '0:30',
+              paceType: PaceType.Mile,
+            },
+            {
+              type: RunItemType.TimeInterval,
+              time: '1:00',
+              paceType: PaceType._5K,
+            },
+            {
+              type: RunItemType.TimeInterval,
+              time: '0:30',
+              paceType: PaceType.Mile,
+            },
+            {
+              type: RunItemType.TimeInterval,
+              time: '2:00',
+              paceType: PaceType._10K,
+            },
+            {
+              type: RunItemType.TimeInterval,
+              time: '0:30',
+              paceType: PaceType.Mile,
+            },
+            {
+              type: RunItemType.TimeInterval,
+              time: '1:00',
+              paceType: PaceType._5K,
+            },
+            {
+              type: RunItemType.TimeInterval,
+              time: '0:30',
+              paceType: PaceType.Mile,
+            },
+            {
+              type: RunItemType.Message,
+              msg: '45 seconds recovery between all intervals',
+            },
+          ],
+        },
+        {
+          type: WorkoutType.RecoveryRun,
+          title: '12 Minute Run',
+          items: [
+            {
+              type: RunItemType.Run,
+              time: '12:00',
+              paceType: PaceType.Recovery,
+            },
+          ],
+        },
+        {
+          title: 'Faster Fun',
+          type: WorkoutType.SpeedRun,
+          subtype: RunType.Intervals,
+          items: [
+            {
+              type: RunItemType.TimeInterval,
+              time: '5:00',
+              paceType: PaceType.WarmUp,
+            },
+            {
+              type: RunItemType.TimeInterval,
+              time: '2:00',
+              paceType: PaceType.Mile,
+            },
+            {
+              type: RunItemType.TimeInterval,
+              time: '0:30',
+              paceType: PaceType._10K,
+            },
+            {
+              type: RunItemType.TimeInterval,
+              time: '1:30',
+              paceType: PaceType.Mile,
+            },
+            {
+              type: RunItemType.TimeInterval,
+              time: '0:30',
+              paceType: PaceType._10K,
+            },
+            {
+              type: RunItemType.TimeInterval,
+              time: '1:00',
+              paceType: PaceType.Mile,
+            },
+            {
+              type: RunItemType.TimeInterval,
+              time: '0:30',
+              paceType: PaceType._10K,
+            },
+            {
+              type: RunItemType.TimeInterval,
+              time: '1:00',
+              paceType: PaceType.Mile,
+            },
+            {
+              type: RunItemType.TimeInterval,
+              time: '0:30',
+              paceType: PaceType._10K,
+            },
+            {
+              type: RunItemType.TimeInterval,
+              time: '0:30',
+              paceType: PaceType.Best,
+            },
+            {
+              type: RunItemType.Message,
+              msg: '30 seconds recovery between all intervals',
+            },
+          ],
+        },
+        {
+          title: '15 Minute Run',
+          type: WorkoutType.LongRun,
+          items: [
+            {
+              type: RunItemType.LongRun,
+              time: '15:00',
+            },
+          ],
+        },
+      ],
+    },
   ],
 }
