@@ -275,5 +275,92 @@ export const plan5k: Plan = {
         },
       ],
     },
+    {
+      weeksToGo: 6,
+      runs: [
+        {
+          type: WorkoutType.RecoveryRun,
+          title: 'Two Mile Run',
+          items: [
+            {
+              type: RunItemType.DistanceInterval,
+              distance: '3.2Km/2 Miles',
+              paceType: PaceType.Recovery,
+            },
+          ],
+        },
+        {
+          type: WorkoutType.SpeedRun,
+          subtype: RunType.Fartlek,
+          title: 'How Fartlek Can You go?',
+          items: [
+            {
+              type: RunItemType.TimeIntervals,
+              amount: 2,
+              time: '1:30',
+              paceType: PaceType._10K,
+            },
+            {
+              type: RunItemType.TimeIntervals,
+              amount: 3,
+              time: '1:00',
+              paceType: PaceType._5K,
+            },
+            {
+              type: RunItemType.TimeIntervals,
+              amount: 4,
+              time: '0:30',
+              paceType: PaceType.Mile,
+            },
+            {
+              type: RunItemType.TimeIntervals,
+              amount: 5,
+              time: '0:15',
+              paceType: PaceType.Best,
+            },
+            {
+              type: RunItemType.Message,
+              msg: `This is a continuous Fartlek run.
+        Each interval of “hard running” is
+        followed by recovery running done
+        at an easy effort. Duration of the
+        recovery are equal to the length
+        of the preceding “hard” interval that
+        was run.`,
+            },
+          ],
+        },
+        {
+          type: WorkoutType.RecoveryRun,
+          title: 'Go 20 with Bill Nye',
+          items: [
+            {
+              type: RunItemType.TimeInterval,
+              time: '20:00',
+              paceType: PaceType.Recovery,
+            },
+          ],
+        },
+        {
+          type: WorkoutType.SpeedRun,
+          subtype: RunType.Fartlek,
+          title: 'One Hard. One Easy',
+          items: [
+            {
+              type: RunItemType.TimeInterval,
+              time: '5:00',
+              paceType: PaceType.WarmUp,
+            },
+            // TODO: implement Fartlet run item type
+            // 15:00 Fartlek run Effort alternates between 1:00 of Hard Running and 1:00 of Easy Running.
+          ],
+        },
+        {
+          type: WorkoutType.LongRun,
+          title: 'Easy Run',
+          items: [{ type: RunItemType.LongRun, time: '25:00' }],
+        },
+      ],
+    },
   ],
 }
