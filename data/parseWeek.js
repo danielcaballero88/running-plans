@@ -1,6 +1,6 @@
 import * as fs from "fs";
 
-function readFileToString(filePath) {
+export function readFileToString(filePath) {
   try {
     const fileContent = fs.readFileSync(filePath, "utf8");
     return fileContent;
@@ -53,6 +53,8 @@ export function parseFile(filePath) {
       console.log("Success writing to file", outputFilepath);
     }
   });
+
+  return outputFilepath;
 }
 
-// parseFile(["5k", "01-WEEKS-TO-GO.txt"]);
+// parseFile(["5k", "01-WEEK-TO-GO.txt"])
