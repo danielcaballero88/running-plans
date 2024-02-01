@@ -42,7 +42,7 @@ async function loadJsonFile(filePath) {
 function joinJsonInOneFile(jsonFiles) {
   // Join all json files into a single file
   const planData = [];
-  jsonFiles.forEach(async (filepath) => {
+  jsonFiles.reverse().forEach(async (filepath) => {
     console.log(filepath);
     // const content = readFileToString(filepath);
     const weekData = await loadJsonFile(filepath);
