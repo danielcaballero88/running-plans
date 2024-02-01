@@ -51,10 +51,14 @@
 
           a {
             text-decoration: none;
-            font-weight: bold;
+            // font-weight: bold;
             display: block;
 
             &:hover {
+              text-decoration: underline;
+            }
+
+            &.active {
               text-decoration: underline;
             }
           }

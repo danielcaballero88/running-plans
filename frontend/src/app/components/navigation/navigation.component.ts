@@ -1,6 +1,10 @@
 import { animate, state, style, transition, trigger } from '@angular/animations'
-import { Component, ViewChild } from '@angular/core'
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core'
 import { MatSidenav } from '@angular/material/sidenav'
+import { Event, NavigationEnd, Router } from '@angular/router'
+import { Subject } from 'rxjs'
+
+import { filter, takeUntil } from 'rxjs/operators'
 
 @Component({
   selector: 'app-navigation',
@@ -40,13 +44,37 @@ import { MatSidenav } from '@angular/material/sidenav'
     ]),
   ],
 })
-export class NavigationComponent {
+export class NavigationComponent implements OnInit, OnDestroy {
   @ViewChild('sidenav') sidenav!: MatSidenav
-  isSidenavOpen: boolean = false
+  isSidenavOpen: boolean
+  currentUrl: string
+  private ngUnsubscribe = new Subject()
 
-  // ngAfterViewInit () {
-  //   this.toggleSidenav()
-  // }
+  constructor(private router: Router) {
+    this.isSidenavOpen = false
+    this.currentUrl = router.url
+  }
+
+  ngOnInit(): void {
+    this.router.events
+      .pipe(
+        filter(
+          (e: Event | NavigationEnd): e is NavigationEnd =>
+            e instanceof NavigationEnd,
+        ),
+        takeUntil(this.ngUnsubscribe),
+      )
+      .subscribe((e: NavigationEnd) => {
+        // Do something
+        this.currentUrl = e.url
+      })
+  }
+
+  ngOnDestroy(): void {
+    // Unsubscribe from the router events to avoid memory leaks
+    this.ngUnsubscribe.next(null)
+    this.ngUnsubscribe.complete()
+  }
 
   toggleSidenav() {
     console.log('toggleSidenav')

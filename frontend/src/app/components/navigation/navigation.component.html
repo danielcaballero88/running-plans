@@ -16,8 +16,13 @@
     <mat-sidenav #sidenav mode="side">
       <ul>
         <li>
-          <a routerLink="/home/" (click)="toggleSidenav()" class="nav-item">
-            Home
+          <a
+            routerLink="/home/"
+            (click)="toggleSidenav()"
+            class="nav-item"
+            [class.active]="currentUrl === '/home'"
+          >
+            HOME
           </a>
         </li>
         <li>
@@ -25,8 +30,9 @@
             routerLink="/get-started/"
             (click)="toggleSidenav()"
             class="nav-item"
+            [class.active]="currentUrl === '/get-started'"
           >
-            Get Started
+            GET STARTED
           </a>
         </li>
         <li>
@@ -34,8 +40,19 @@
             routerLink="/pace-chart/"
             (click)="toggleSidenav()"
             class="nav-item"
+            [class.active]="currentUrl === '/pace-chart'"
           >
-            Pace Chart
+            PACE CHART
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/running-plan/"
+            (click)="toggleSidenav()"
+            class="nav-item"
+            [class.active]="currentUrl === '/running-plan'"
+          >
+            RUNNING PLAN
           </a>
         </li>
       </ul>
