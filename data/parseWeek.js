@@ -33,8 +33,8 @@ function parseWeekStringToJson(fileContent) {
   return runs;
 }
 
-function parseFile(filePath) {
-  const content = readFileToString(filePath);
+export function parseFile(filePath) {
+  const content = readFileToString(filePath.join("/"));
 
   const title = content.split("\n")[0];
 
@@ -43,15 +43,16 @@ function parseFile(filePath) {
   const obj = { title, runs };
 
   // Write to json file
-  const outputFilepath = title.replace(/\s+/g, "-") + ".json";
+  const outputFilename = title.replace(/\s+/g, "-") + ".json";
+  const outputFilepath = filePath.slice(0, -1).join("/") + "/" + outputFilename;
   const outputContent = JSON.stringify(obj, null, 2);
   fs.writeFile(outputFilepath, outputContent, (err) => {
     if (err) {
-      console.error("Error writing to file");
+      console.error("Error writing to file", outputFilepath);
     } else {
-      console.log("Success writing to file");
+      console.log("Success writing to file", outputFilepath);
     }
   });
 }
 
-parseFile("01-WEEKS-TO-GO.txt");
+// parseFile(["5k", "01-WEEKS-TO-GO.txt"]);

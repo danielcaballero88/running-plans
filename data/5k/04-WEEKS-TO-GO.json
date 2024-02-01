@@ -4,7 +4,7 @@
     {
       "runType": "RECOVERY RUN",
       "runTitle": "Morning Run",
-      "items": ["25:00 Recovery Run"]
+      "items": ["25:00 Recovery Run", ""]
     },
     {
       "runType": "SPEED RUN",
@@ -14,13 +14,14 @@
         "5:00 Warm Up",
         "5 x 4:00 5K Pace",
         "2:00 recovery after 1st and 3rd interval.",
-        "2:30 recovery after 2nd and 4th intervals"
+        "2:30 recovery after 2nd and 4th intervals",
+        ""
       ]
     },
     {
       "runType": "RECOVERY RUN",
       "runTitle": "Don’t Wanna Run Run",
-      "items": ["25:00 Recovery Run"]
+      "items": ["25:00 Recovery Run", ""]
     },
     {
       "runType": "SPEED RUN",
@@ -31,13 +32,14 @@
         "23:00 Tempo Run",
         "First 12:00 running out strong and controlled",
         "Last 11:00 running back progressively faster.",
-        "Goal is to cover same distance out and back."
+        "Goal is to cover same distance out and back.",
+        ""
       ]
     },
     {
       "runType": "LONG RUN",
       "runTitle": "Fuel the Run",
-      "items": ["33:00 Recovery Run"]
+      "items": ["33:00 Recovery Run", ""]
     }
   ]
 }

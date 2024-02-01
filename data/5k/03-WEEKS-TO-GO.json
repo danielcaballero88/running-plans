@@ -4,7 +4,7 @@
     {
       "runType": "RECOVERY RUN",
       "runTitle": "I Need A Win Run",
-      "items": ["30:00 Recovery Run"]
+      "items": ["30:00 Recovery Run", ""]
     },
     {
       "runType": "SPEED RUN",
@@ -22,24 +22,25 @@
         "0:15 Best Pace",
         "1:30 Mile Pace",
         "0:15 Best Pace",
-        "Recovery will be 30 seconds after first set of Mile and Best Pace intervals and increase by 15 seconds after each subsequent set"
+        "Recovery will be 30 seconds after first set of Mile and Best Pace intervals and increase by 15 seconds after each subsequent set",
+        ""
       ]
     },
     {
       "runType": "RECOVERY RUN",
       "runTitle": "Breaking Through Barriers",
-      "items": ["31:00 Recovery Run"]
+      "items": ["31:00 Recovery Run", ""]
     },
     {
       "runType": "SPEED RUN",
       "runTitle": "Tempo Run",
       "runSubtype": "Tempo Run",
-      "items": ["7:00 Warm Up", "25:00 Tempo Run"]
+      "items": ["7:00 Warm Up", "25:00 Tempo Run", ""]
     },
     {
       "runType": "LONG RUN",
       "runTitle": "Four Mile Run",
-      "items": ["6.5K/4 Mile Run"]
+      "items": ["6.5K/4 Mile Run", ""]
     }
   ]
 }

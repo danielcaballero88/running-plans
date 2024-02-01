@@ -4,7 +4,7 @@
     {
       "runType": "RECOVERY RUN",
       "runTitle": "End of Day Run",
-      "items": ["25:00 Recovery Run"]
+      "items": ["25:00 Recovery Run", ""]
     },
     {
       "runType": "SPEED RUN",
@@ -17,13 +17,14 @@
         "3:00 10K Pace",
         "4 x 0:30 5K Pace",
         "0:30 Mile Pace",
-        "Recovery is 30 seconds between all intervals"
+        "Recovery is 30 seconds between all intervals",
+        ""
       ]
     },
     {
       "runType": "RECOVERY RUN",
       "runTitle": "Another Mile Run",
-      "items": ["1.6K/One Mile Run"]
+      "items": ["1.6K/One Mile Run", ""]
     },
     {
       "runType": "SPEED RUN",
@@ -37,13 +38,14 @@
         "Repeat entire series 3 x’s",
         "1:00 Recovery after 5K Pace",
         "0:30 Recovery after Mile Pace and first Best Pace interval",
-        "2:00 Recovery between sets"
+        "2:00 Recovery between sets",
+        ""
       ]
     },
     {
       "runType": "LONG RUN",
       "runTitle": "Just A Run",
-      "items": ["30:00 Run"]
+      "items": ["30:00 Run", ""]
     }
   ]
 }

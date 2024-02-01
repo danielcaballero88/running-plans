@@ -4,7 +4,7 @@
     {
       "runType": "RECOVERY RUN",
       "runTitle": "Ten Minute Run",
-      "items": ["10:00 Recovery Run"]
+      "items": ["10:00 Recovery Run", ""]
     },
     {
       "runType": "SPEED RUN",
@@ -19,13 +19,14 @@
         "0:30 Mile Pace",
         "1:00 5K Pace",
         "0:30 Mile Pace",
-        "45 seconds recovery between all intervals"
+        "45 seconds recovery between all intervals",
+        ""
       ]
     },
     {
       "runType": "RECOVERY RUN",
       "runTitle": "12 Minute Run",
-      "items": ["12:00 Recovery Run"]
+      "items": ["12:00 Recovery Run", ""]
     },
     {
       "runType": "SPEED RUN",
@@ -42,13 +43,14 @@
         "1:00 Mile Pace",
         "0:30 10K Pace",
         "0:30 Best Pace",
-        "30 seconds recovery between all intervals"
+        "30 seconds recovery between all intervals",
+        ""
       ]
     },
     {
       "runType": "LONG RUN",
       "runTitle": "15 Minute Run",
-      "items": ["15:00 Run"]
+      "items": ["15:00 Run", ""]
     }
   ]
 }
