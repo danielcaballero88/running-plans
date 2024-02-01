@@ -4,7 +4,7 @@
     {
       "runType": "RECOVERY RUN",
       "runTitle": "Suckcess Run",
-      "items": ["35:00 Recovery Run", ""]
+      "items": ["35:00 Recovery Run"]
     },
     {
       "runType": "SPEED RUN",
@@ -14,14 +14,13 @@
         "0:45 10K effort",
         "0:15 Best effort",
         "Repeat series 5 x’s",
-        "Recovery is 75 seconds after 10K effort And 45 seconds recovery after Best effort",
-        ""
+        "Recovery is 75 seconds after 10K effort And 45 seconds recovery after Best effort"
       ]
     },
     {
       "runType": "RECOVERY RUN",
       "runTitle": "Stress Free Run",
-      "items": ["25:00 Recovery Run", ""]
+      "items": ["25:00 Recovery Run"]
     },
     {
       "runType": "SPEED RUN",
@@ -37,14 +36,13 @@
         "1:00 Mile Pace",
         "5:00 10K Pace",
         "0:30 Best Pace",
-        "1:00 Recovery between all intervals except after first 10K Pace interval which will be 1:30 recovery",
-        ""
+        "1:00 Recovery between all intervals except after first 10K Pace interval which will be 1:30 recovery"
       ]
     },
     {
       "runType": "LONG RUN",
       "runTitle": "5K Run",
-      "items": ["5K/3.1 Mile Run", ""]
+      "items": ["5K/3.1 Mile Run"]
     }
   ]
 }

@@ -4,7 +4,7 @@
     {
       "runType": "RECOVERY RUN",
       "runTitle": "5K Head Starts",
-      "items": ["5K/3.1 Mile Recovery Run", ""]
+      "items": ["5K/3.1 Mile Recovery Run"]
     },
     {
       "runType": "SPEED RUN",
@@ -16,24 +16,23 @@
         "3:00 5K Pace",
         "2:00 Mile Pace",
         "1:00 Best Pace",
-        "This is to be run as a 15:00 Progression Tempo Run",
-        ""
+        "This is to be run as a 15:00 Progression Tempo Run"
       ]
     },
     {
       "runType": "RECOVERY RUN",
       "runTitle": "Big Day Run",
-      "items": ["25:00 Recovery Run", ""]
+      "items": ["25:00 Recovery Run"]
     },
     {
       "runType": "RECOVERY RUN",
       "runTitle": "1K RUN",
-      "items": ["1K/0.62 Mile Run", ""]
+      "items": ["1K/0.62 Mile Run"]
     },
     {
       "runType": "RACE DAY",
       "runTitle": "5K Race",
-      "items": ["5K/3.1 Miles", ""]
+      "items": ["5K/3.1 Miles"]
     }
   ]
 }

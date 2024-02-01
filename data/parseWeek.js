@@ -26,7 +26,8 @@ function parseWeekStringToJson(fileContent) {
     const runTitle = lines[1].match(/:(.*)$/)[1].trim();
     const candidateFirstItem = lines[2].match(/\d.*$/);
     const runSubtype = candidateFirstItem ? undefined : lines[2];
-    const items = runSubtype ? lines.slice(3) : lines.slice(2);
+    let items = runSubtype ? lines.slice(3) : lines.slice(2);
+    items = items.filter((x) => x);
     runs.push({ runType, runTitle, runSubtype, items });
   });
 
