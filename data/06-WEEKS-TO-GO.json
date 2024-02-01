@@ -1,0 +1,42 @@
+{
+  "title": "06 WEEKS TO GO",
+  "runs": [
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Two Mile Run",
+      "items": ["3.2K/2 Mile Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "How Fartlek Can You go?",
+      "runSubtype": "Fartlek",
+      "items": [
+        "2 x 1:30 10K Pace",
+        "3 x 1:00 5K Pace",
+        "4 x 0:30 Mile Pace",
+        "5 x 0:15 Best Pace",
+        "This is a continuous Fartlek run. Each interval of “hard running” is followed by recovery running done at an easy effort.",
+        "Duration of the recovery are equal to the length of the preceding “hard” interval that was run."
+      ]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Go 20",
+      "items": ["20:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "One Hard. One Easy Fartlek",
+      "items": [
+        "5:00 Warm Up",
+        "15:00 Fartlek run",
+        "Effort alternates between 1:00 of Hard Running and 1:00 of Easy Running."
+      ]
+    },
+    {
+      "runType": "LONG RUN",
+      "runTitle": "Easy Run",
+      "items": ["25:00 Run"]
+    }
+  ]
+}
