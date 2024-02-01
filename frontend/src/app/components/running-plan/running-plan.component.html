@@ -3,24 +3,23 @@
 
   <mat-card *ngFor="let weekObj of runningPlan.plan.weeks">
     <mat-card-content>
-      <p>{{ weekObj.weeksToGo }} weeks to go</p>
+      <p>{{ weekObj.title }}</p>
       <mat-accordion>
         <mat-expansion-panel *ngFor="let runObj of weekObj.runs">
           <mat-expansion-panel-header>
             <mat-panel-title>
-              {{ runObj.title }}
+              {{ runObj.runType }}: {{ runObj.runTitle }}
             </mat-panel-title>
             <!-- <mat-panel-description>
               This is a summary of the content
             </mat-panel-description> -->
           </mat-expansion-panel-header>
-          <p>
-            Type: {{ runObj.type }}
-            <span *ngIf="runObj.subtype">/ {{ runObj.subtype }}</span>
+          <p class="run-subtype" *ngIf="runObj.runSubtype">
+            {{ runObj.runSubtype }}
           </p>
-          <ul>
-            <li *ngFor="let item of runObj.items">
-              <span *ngIf="item.type === 'message'">{{ item.msg }}</span>
+          <ul class="run-items-list">
+            <li class="run-item" *ngFor="let item of runObj.items">
+              <span>{{ item }}</span>
             </li>
           </ul>
         </mat-expansion-panel>

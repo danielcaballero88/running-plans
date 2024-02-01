@@ -2,8 +2,6 @@ import { plan5k } from 'src/app/components/running-plan/plans/5k'
 import {
   PaceType,
   Plan,
-  RunItemObj,
-  RunItemType,
   RunObj,
   WeekObj,
 } from 'src/app/components/running-plan/plans/types'
@@ -50,7 +48,7 @@ export class RunningPlan {
 
   private parseRun(runObj: RunObj): RunObj {
     console.log('parseRun')
-    const parsedItems: RunItemObj[] = []
+    const parsedItems: string[] = []
     runObj.items.forEach((item) => {
       const parsedItem = this.parseRunItem(item)
       parsedItems.push(parsedItem)
@@ -58,49 +56,15 @@ export class RunningPlan {
     return { ...runObj, items: parsedItems }
   }
 
-  private parseRunItem(item: RunItemObj) {
-    let parsedItem: RunItemObj
-    switch (item.type) {
-      case RunItemType.Run:
-        parsedItem = {
-          type: RunItemType.Message,
-          msg: `${item.time} at ${item.paceType} Pace`,
-        }
-        parsedItem.msg = this.addPaceToMsg(parsedItem.msg, item.paceType)
-        break
-      case RunItemType.LongRun:
-        parsedItem = {
-          type: RunItemType.Message,
-          msg: `${item.time} Run (at comfortable pace)`,
-        }
-        break
-      case RunItemType.TimeInterval:
-        parsedItem = {
-          type: RunItemType.Message,
-          msg: `${item.time} at ${item.paceType} Pace`,
-        }
-        parsedItem.msg = this.addPaceToMsg(parsedItem.msg, item.paceType)
-        break
-      case RunItemType.TimeIntervals:
-        parsedItem = {
-          type: RunItemType.Message,
-          msg: `${item.amount} x ${item.time} at ${item.paceType} Pace`,
-        }
-        parsedItem.msg = this.addPaceToMsg(parsedItem.msg, item.paceType)
-        break
-      case RunItemType.DistanceInterval:
-        parsedItem = {
-          type: RunItemType.Message,
-          msg: `${item.distance} at ${item.paceType} Pace`,
-        }
-        parsedItem.msg = this.addPaceToMsg(parsedItem.msg, item.paceType)
-        break
-      case RunItemType.Message:
-        parsedItem = { ...item }
-        break
-      default:
-        throw new Error(`Wrong running item: ${JSON.stringify(item)}`)
-    }
+  private parseRunItem(item: string) {
+    // Not doing anything at the moment... eventually I can get here the correct
+    // pace for the user and this item and append it to the item to simplify planning.
+    const parsedItem: string = item
+    // Check if there is a pace and get correct value from pace chart if so
+    // if (item.includes('Pace')) {
+    //   // Get the correct pace and append to item
+    //   // ...
+    // }
     return parsedItem
   }
 
