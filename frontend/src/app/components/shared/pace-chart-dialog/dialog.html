@@ -2,6 +2,13 @@
 <div mat-dialog-content>
   <app-pace-chart-table></app-pace-chart-table>
 </div>
-<div mat-dialog-actions>
-  <button mat-button (click)="closeDialog()" cdkFocusInitial>Ok</button>
+<div mat-dialog-actions class="buttons">
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="closeDialog()"
+    cdkFocusInitial
+  >
+    Ok
+  </button>
 </div>

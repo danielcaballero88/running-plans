@@ -23,6 +23,7 @@ export class PaceChartDialogButtonComponent {
 @Component({
   selector: 'app-dialog-overview-example-dialog',
   templateUrl: './dialog.html',
+  styleUrls: ['./dialog.scss'],
 })
 export class PaceChartDialogComponent {
   constructor(
