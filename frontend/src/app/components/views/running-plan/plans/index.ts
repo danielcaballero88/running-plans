@@ -1,12 +1,7 @@
-import { plan5k } from 'src/app/components/running-plan/plans/5k'
-import {
-  PaceType,
-  Plan,
-  RunObj,
-  WeekObj,
-} from 'src/app/components/running-plan/plans/types'
 import { PaceChart } from 'src/app/services/pace-chart-service/models/pace-chart-class'
 import { Distance, PaceChartObject } from 'src/app/types/pace-chart-types'
+import { plan5k } from './5k'
+import { PaceType, Plan, RunObj, WeekObj } from './types'
 
 export class RunningPlan {
   distance: Distance

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
-import { UserInputObject } from 'src/app/components/get-started/types'
-import { RunningPlan } from 'src/app/components/running-plan/plans'
+import { UserInputObject } from 'src/app/components/views/get-started/types'
+import { RunningPlan } from 'src/app/components/views/running-plan/plans'
 import { AppStateService } from 'src/app/services/app-state-service/app-state-service.service'
 import { Distance, PaceChartObject } from 'src/app/types/pace-chart-types'
 

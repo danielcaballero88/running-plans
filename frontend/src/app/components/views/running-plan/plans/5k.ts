@@ -1,4 +1,4 @@
-import { Plan } from 'src/app/components/running-plan/plans/types'
+import { Plan } from './types'
 
 export const plan5k: Plan = {
   weeks: [

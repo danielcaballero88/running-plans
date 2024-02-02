@@ -1,11 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
 import { FormBuilder, Validators } from '@angular/forms'
 import { Router } from '@angular/router'
-import { UserInputObject } from 'src/app/components/get-started/types'
+import { UserInputObject } from 'src/app/components/views/get-started/types'
 import { AppStateService } from 'src/app/services/app-state-service/app-state-service.service'
-import { PaceChart } from '../../services/pace-chart-service/models/pace-chart-class'
-import { PaceChartService } from '../../services/pace-chart-service/pace-chart.service'
-import { Distance } from '../../types/pace-chart-types'
+import { PaceChart } from 'src/app/services/pace-chart-service/models/pace-chart-class'
+import { PaceChartService } from 'src/app/services/pace-chart-service/pace-chart.service'
+import { Distance } from 'src/app/types/pace-chart-types'
 
 @Component({
   selector: 'app-get-started',

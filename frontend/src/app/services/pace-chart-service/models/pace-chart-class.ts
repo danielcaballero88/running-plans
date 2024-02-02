@@ -1,4 +1,4 @@
-import { PaceType } from 'src/app/components/running-plan/plans/types'
+import { PaceType } from 'src/app/components/views/running-plan/plans/types'
 import { TimeSpan } from 'src/app/models/timeSpan'
 import {
   Distance,

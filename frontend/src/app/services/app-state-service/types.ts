@@ -1,4 +1,4 @@
-import { UserInputObject } from 'src/app/components/get-started/types'
+import { UserInputObject } from 'src/app/components/views/get-started/types'
 import { PaceChartObject } from 'src/app/types/pace-chart-types'
 
 export interface StateObject {

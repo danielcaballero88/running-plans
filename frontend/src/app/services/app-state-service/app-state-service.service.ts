@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
-import { UserInputObject } from 'src/app/components/get-started/types'
-import { StateObject } from 'src/app/services/app-state-service/types'
+import { UserInputObject } from 'src/app/components/views/get-started/types'
 import { PaceChartObject } from 'src/app/types/pace-chart-types'
+import { StateObject } from './types'
 
 @Injectable({
   providedIn: 'root',
