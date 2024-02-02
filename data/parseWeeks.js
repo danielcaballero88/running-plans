@@ -22,16 +22,16 @@ async function readDirectoryAndFilterTxtFiles(directoryPath) {
 function parseTxtFilesToJson(txtFiles) {
   // Parse each file to json
   const jsonFiles = [];
-  txtFiles.forEach((filename) => {
-    const jsonFilepath = parseFile(["5k", filename]);
+  txtFiles.forEach((filepath) => {
+    const jsonFilepath = parseFile(filepath.split(path.sep));
     jsonFiles.push(jsonFilepath);
   });
   return jsonFiles;
 }
 
-async function loadJsonFile(filePath) {
+async function loadJsonFile(filepath) {
   try {
-    const data = await fs.readFile(filePath, "utf8");
+    const data = await fs.readFile(filepath, "utf8");
     const jsonData = JSON.parse(data);
     return jsonData;
   } catch (error) {
@@ -39,7 +39,7 @@ async function loadJsonFile(filePath) {
   }
 }
 
-function joinJsonInOneFile(jsonFiles) {
+function joinJsonInOneFile(dir, jsonFiles) {
   // Join all json files into a single file
   const planData = [];
   jsonFiles.reverse().forEach(async (filepath) => {
@@ -48,7 +48,7 @@ function joinJsonInOneFile(jsonFiles) {
     const weekData = await loadJsonFile(filepath);
     planData.push(weekData);
     // Write to json file
-    const outputFilepath = path.join("5k", "plan.json");
+    const outputFilepath = path.join(dir, "plan.json");
     const outputContent = JSON.stringify(planData, null, 2);
     fs.writeFile(outputFilepath, outputContent, (err) => {
       if (err) {
@@ -60,47 +60,11 @@ function joinJsonInOneFile(jsonFiles) {
   });
 }
 
-const txtFiles = await readDirectoryAndFilterTxtFiles("5k");
-const jsonFiles = parseTxtFilesToJson(txtFiles);
-
-joinJsonInOneFile(jsonFiles);
-
-// // Usage example
-// readDirectoryAndFilterTxtFiles("5k")
-//   .then((txtFiles) => {
-//     // Parse each file to json
-//     console.log("List of .txt files:");
-//     console.log(txtFiles);
-
-//     // You can access txtFiles here or pass it to another function
-//     const jsonFiles = [];
-//     txtFiles.forEach((filename) => {
-//       const jsonFilepath = parseFile(["5k", filename]);
-//       jsonFiles.push(jsonFilepath);
-//     });
-//     return jsonFiles
-//   })
-//   .then(jsonFiles => {
-//     // Join all json files into a single file
-//     const planData = [];
-//     jsonFiles.forEach(filepath => {
-//       console.log(filepath);
-//       const content = readFileToString(filepath);
-//       const weekData = JSON.parse(content);
-//       planData.push(weekData);
-//       // Write to json file
-//       const outputFilepath = path.join("5k", "plan.json");
-//       const outputContent = JSON.stringify(planData, null, 2);
-//       fs.writeFile(outputFilepath, outputContent, (err) => {
-//         if (err) {
-//           console.error("Error writing to file", outputFilepath);
-//         } else {
-//           console.log("Success writing to file", outputFilepath);
-//         }
-//       });
-//     });
-//   })
-//   .catch((err) => {
-//     // Handle errors from the promise chain
-//     console.error(`Error in promise chain: ${err.message}`);
-//   });
+const dirToProcess = "10k";
+const txtFiles = await readDirectoryAndFilterTxtFiles(dirToProcess);
+const txtFilesPaths = txtFiles.reverse().map((x) => path.join(dirToProcess, x));
+console.log(txtFilesPaths);
+const jsonFiles = parseTxtFilesToJson(txtFilesPaths);
+// console.log(jsonFiles);
+console.log(jsonFiles.reverse());
+joinJsonInOneFile(dirToProcess, jsonFiles);

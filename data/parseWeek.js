@@ -1,4 +1,5 @@
 import * as fs from "fs";
+import * as path from "path";
 
 export function readFileToString(filePath) {
   try {
@@ -47,7 +48,7 @@ export function parseFile(filePath) {
   const outputFilename = title.replace(/\s+/g, "-") + ".json";
   const outputFilepath = filePath.slice(0, -1).join("/") + "/" + outputFilename;
   const outputContent = JSON.stringify(obj, null, 2);
-  fs.writeFile(outputFilepath, outputContent, (err) => {
+  fs.writeFileSync(outputFilepath, outputContent, (err) => {
     if (err) {
       console.error("Error writing to file", outputFilepath);
     } else {
@@ -58,4 +59,4 @@ export function parseFile(filePath) {
   return outputFilepath;
 }
 
-// parseFile(["5k", "01-WEEK-TO-GO.txt"])
+parseFile(["10k", "01-WEEKS-TO-GO.txt"]);
