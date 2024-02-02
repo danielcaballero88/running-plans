@@ -9,6 +9,10 @@ import { AppComponent } from './app.component'
 import { FooterComponent } from './components/shared/footer/footer.component'
 import { HeaderComponent } from './components/shared/header/header.component'
 import { NavigationComponent } from './components/shared/navigation/navigation.component'
+import {
+  PaceChartDialogButtonComponent,
+  PaceChartDialogComponent,
+} from './components/shared/pace-chart-dialog/pace-chart-dialog.component'
 import { PaceChartTableComponent } from './components/shared/pace-chart-table/pace-chart-table.component'
 import { GetStartedComponent } from './components/views/get-started/get-started.component'
 import { HomeComponent } from './components/views/home/home.component'
@@ -26,6 +30,8 @@ import { RunningPlanComponent } from './components/views/running-plan/running-pl
     PaceChartComponent,
     RunningPlanComponent,
     PaceChartTableComponent,
+    PaceChartDialogButtonComponent,
+    PaceChartDialogComponent,
   ],
   imports: [
     AppMaterialModule,

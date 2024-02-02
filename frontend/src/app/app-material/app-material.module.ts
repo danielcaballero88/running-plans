@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser'
 import { MatButtonModule } from '@angular/material/button'
 import { MatButtonToggleModule } from '@angular/material/button-toggle'
 import { MatCardModule } from '@angular/material/card'
+import { MatDialogModule } from '@angular/material/dialog'
 import { MatExpansionModule } from '@angular/material/expansion'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatIconModule } from '@angular/material/icon'
@@ -30,6 +31,7 @@ import { MatToolbarModule } from '@angular/material/toolbar'
     MatSidenavModule,
     MatTableModule,
     MatToolbarModule,
+    MatDialogModule,
   ],
 })
 export class AppMaterialModule {}
