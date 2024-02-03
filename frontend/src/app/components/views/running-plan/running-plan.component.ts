@@ -3,7 +3,7 @@ import { Router } from '@angular/router'
 import { UserInputObject } from 'src/app/components/views/get-started/types'
 import { RunningPlan } from 'src/app/components/views/running-plan/plans'
 import { AppStateService } from 'src/app/services/app-state-service/app-state-service.service'
-import { Distance, PaceChartObject } from 'src/app/types/pace-chart-types'
+import { PaceChartObject } from 'src/app/types/pace-chart-types'
 
 @Component({
   selector: 'app-running-plan',
@@ -40,7 +40,7 @@ export class RunningPlanComponent implements OnInit {
     this.paceChartObj = paceChartObj
 
     // For now I only have the 5k plan
-    this.runningPlan = new RunningPlan(Distance._5k, this.paceChartObj)
+    this.runningPlan = new RunningPlan(userInput.distance, this.paceChartObj)
 
     console.log('this.runningPlan', this.runningPlan)
   }

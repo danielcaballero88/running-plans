@@ -1,5 +1,6 @@
 import { PaceChart } from 'src/app/services/pace-chart-service/models/pace-chart-class'
 import { Distance, PaceChartObject } from 'src/app/types/pace-chart-types'
+import { plan10k } from './10k'
 import { plan5k } from './5k'
 import { PaceType, Plan, RunObj, WeekObj } from './types'
 
@@ -12,37 +13,36 @@ export class RunningPlan {
     this.distance = distance
     this.paceChart = new PaceChart(paceChartObject)
 
+    console.log('RunningPlan.constructor', distance)
     switch (distance) {
       case Distance._5k:
         this.plan = this.parsePlan(plan5k)
+        break
+      case Distance._10k:
+        this.plan = this.parsePlan(plan10k)
+        break
+      default:
+        throw Error(`No plan for distance=${distance}`)
     }
   }
 
   private parsePlan(rawPlan: Plan): Plan {
-    console.log('parsePlan')
     return { weeks: this.parseWeeks(rawPlan.weeks) }
   }
 
   private parseWeeks(weeks: WeekObj[]): WeekObj[] {
-    console.log('parseWeeks')
-    console.log(this)
     return weeks.map((week) => this.parseWeek(week))
   }
 
   private parseWeek(weekObj: WeekObj): WeekObj {
-    console.log('parseWeek')
-    console.log(this)
     return { ...weekObj, runs: this.parseRuns(weekObj.runs) }
   }
 
   private parseRuns(runObjs: RunObj[]): RunObj[] {
-    console.log('parseRuns')
-    console.log(this)
     return runObjs.map((runObj) => this.parseRun(runObj))
   }
 
   private parseRun(runObj: RunObj): RunObj {
-    console.log('parseRun')
     const parsedItems: string[] = []
     runObj.items.forEach((item) => {
       const parsedItem = this.parseRunItem(item)
