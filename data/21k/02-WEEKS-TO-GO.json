@@ -1,0 +1,48 @@
+{
+  "title": "02 WEEKS TO GO",
+  "runs": [
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "2 Weeks to Go",
+      "items": ["15:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "Stronger Faster",
+      "runSubtype": "Intervals",
+      "items": [
+        "5:00 Warm Up",
+        "3:00 5K Pace",
+        "4 x 0:30 Mile Pace",
+        "Interval series should be done 3 x’s",
+        "2:00 Recovery after 5k Pace",
+        "1:00 Recovery after Mile Pace"
+      ]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "5K Head Starts",
+      "items": ["5K/3.1 Mile Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "In Control",
+      "runSubtype": "Intervals",
+      "items": [
+        "6:00 Warm Up",
+        "1:00 Mile Pace",
+        "3:00 5K Pace",
+        "5:00 10K Pace",
+        "7:00 Recovery Run Pace",
+        "0:30 recovery after Mile Pace",
+        "1:30 recovery after 5K Pace",
+        "2:30 recovery after 10K Pace"
+      ]
+    },
+    {
+      "runType": "LONG RUN",
+      "runTitle": "Seven Mile Run",
+      "items": ["11K/7 Mile Run"]
+    }
+  ]
+}

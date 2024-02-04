@@ -1,0 +1,39 @@
+{
+  "title": "01 WEEK TO GO",
+  "runs": [
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "1 Week to Go",
+      "items": ["15:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "The Speed Run Before...",
+      "runSubtype": "Intervals",
+      "items": [
+        "5:00 Warm Up",
+        "1:00 5K Pace",
+        "2:00 10K Pace",
+        "5:00 Half Marathon Pace",
+        "2:00 10K Pace",
+        "1:00 5K Pace",
+        "1:00 recovery between all intervals"
+      ]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Big Day Run",
+      "items": ["25:00 Recovery Run"]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Two Mile Run",
+      "items": ["3.2K/2 Mile Run"]
+    },
+    {
+      "runType": "LONG RUN",
+      "runTitle": "Half Marathon Race",
+      "items": ["21.1K/13.1 Miles"]
+    }
+  ]
+}

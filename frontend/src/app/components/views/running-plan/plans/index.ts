@@ -1,6 +1,7 @@
 import { PaceChart } from 'src/app/services/pace-chart-service/models/pace-chart-class'
 import { Distance, PaceChartObject } from 'src/app/types/pace-chart-types'
 import { plan10k } from './10k'
+import { plan21k } from './21k'
 import { plan5k } from './5k'
 import { PaceType, Plan, RunObj, WeekObj } from './types'
 
@@ -20,6 +21,9 @@ export class RunningPlan {
         break
       case Distance._10k:
         this.plan = this.parsePlan(plan10k)
+        break
+      case Distance._21k:
+        this.plan = this.parsePlan(plan21k)
         break
       default:
         throw Error(`No plan for distance=${distance}`)

@@ -1,0 +1,44 @@
+{
+  "title": "09 WEEKS TO GO",
+  "runs": [
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "9 Weeks to Go",
+      "items": ["15:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "Run Fast. Repeat.",
+      "runSubtype": "Intervals",
+      "items": [
+        "5:00 Warm Up",
+        "20 x 0:30 Mile pace",
+        "Except #1 and #11 to be run 5K pace",
+        "1:00 recovery between intervals"
+      ]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Run",
+      "items": ["45:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "Hill Hillier Hilliest",
+      "runSubtype": "Hill Workout",
+      "items": [
+        "5:00 Warm Up",
+        "1:00 10K Effort",
+        "0:45 5K Effort",
+        "0:30 Mile Effort",
+        "Series is to be run a total of 3 times",
+        "Recovery is 2:00 after 10K effort, 1:30 after 5K effort & 1:00 after Mile effort"
+      ]
+    },
+    {
+      "runType": "LONG RUN",
+      "runTitle": "Eight Mile Run",
+      "items": ["12.5K/8 Mile Run"]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "title": "12 WEEKS TO GO",
+  "runs": [
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "12 Weeks to Go",
+      "items": [
+        "15:00 Recovery Run",
+        "SPEED RUN:",
+        "NRC Guided Run: Runner Up",
+        "Hill Workout",
+        "5:00 Warm Up",
+        "45 seconds 10K Effort",
+        "15 seconds Best Effort",
+        "Interval series should be done 5 x’s",
+        "Recovery is 1:15 after 10k effort and 45 seconds after Best Effort"
+      ]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Just A Run",
+      "items": ["30:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "Triple 7’s",
+      "runSubtype": "Intervals",
+      "items": [
+        "5:00 Warm Up",
+        "3 x 7:00 5K Pace",
+        "Recovery is 2:30 between intervals"
+      ]
+    },
+    {
+      "runType": "LONG RUN",
+      "runTitle": "Five Mile Run",
+      "items": ["8K/5 Mile Run"]
+    }
+  ]
+}
