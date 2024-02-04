@@ -1,0 +1,35 @@
+{
+  "title": "05 WEEKS TO GO",
+  "runs": [
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Run Long",
+      "items": ["75:00 Recovery Run"]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Not Motivated Run",
+      "items": ["25:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "Two Hard. One Easy.",
+      "runSubtype": "Fartlek",
+      "items": [
+        "5:00 Warm Up",
+        "21:00 Fartlek",
+        "Alternate between 2:00 of hard running and 1:00 of easy running"
+      ]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "I Need A Win Run",
+      "items": ["30:00 Recovery Run"]
+    },
+    {
+      "runType": "LONG RUN",
+      "runTitle": "Long Run",
+      "items": ["29K-35K/18-22 Mile Run"]
+    }
+  ]
+}

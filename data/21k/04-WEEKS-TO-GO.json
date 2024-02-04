@@ -1,0 +1,40 @@
+{
+  "title": "04 WEEKS TO GO",
+  "runs": [
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "4 Weeks to Go",
+      "items": ["15:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "5 x 5 x 10k Pace",
+      "runSubtype": "Intervals",
+      "items": [
+        "5:00 Warm Up",
+        "5 x 5:00 10K Pace",
+        "2:00 recovery between intervals"
+      ]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Whole Run",
+      "items": ["45:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "Two Hard. One Easy.",
+      "runSubtype": "Fartlek",
+      "items": [
+        "5:00 Warm Up",
+        "21:00 Fartlek",
+        "Alternate between 2:00 of hard running and 1:00 of easy running"
+      ]
+    },
+    {
+      "runType": "LONG RUN",
+      "runTitle": "20K Run",
+      "items": ["20K/12.5 Mile Run"]
+    }
+  ]
+}

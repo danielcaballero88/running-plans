@@ -1,0 +1,69 @@
+<div class="navigation-container">
+  <mat-toolbar color="primary">
+    <button class="menu-btn" mat-icon-button (click)="toggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="logo-container">
+      <div class="logo">
+        <img src="/assets/images/icon-white.svg" alt="App logo image" />
+        <span>RUNNING COACH</span>
+        <img src="/assets/images/icon-white.svg" alt="App logo image" />
+      </div>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side">
+      <ul>
+        <li>
+          <a
+            routerLink="/home/"
+            (click)="toggleSidenav()"
+            class="nav-item"
+            [class.active]="currentUrl === '/home'"
+          >
+            HOME
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/get-started/"
+            (click)="toggleSidenav()"
+            class="nav-item"
+            [class.active]="currentUrl === '/get-started'"
+          >
+            GET STARTED
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/pace-chart/"
+            (click)="toggleSidenav()"
+            class="nav-item"
+            [class.active]="currentUrl === '/pace-chart'"
+          >
+            PACE CHART
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/running-plan/"
+            (click)="toggleSidenav()"
+            class="nav-item"
+            [class.active]="currentUrl === '/running-plan'"
+          >
+            RUNNING PLAN
+          </a>
+        </li>
+      </ul>
+    </mat-sidenav>
+    <mat-sidenav-content
+      [class.sidenav-open]="isSidenavOpen"
+      [@triggerColor]="isSidenavOpen ? 'colored' : 'transparent'"
+      [@triggerVisibility]="isSidenavOpen ? 'visible' : 'hidden'"
+      (click)="toggleSidenav()"
+    >
+      <!-- Main content -->
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

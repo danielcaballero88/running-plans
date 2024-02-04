@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 80%;
+  text-align: center;
+  margin-top: 1em;
+
+  table {
+    margin-top: 2em;
+  }
+
+  button {
+    margin-top: 2em;
+  }
+}

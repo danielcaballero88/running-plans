@@ -1,0 +1,49 @@
+:host {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  .pic {
+    overflow: auto;
+    width: 100vw;
+    height: 25em;
+
+    background:
+      linear-gradient(
+        to right,
+        rgba(rgba(15, 15, 13, 1), 0.4),
+        rgba(rgba(15, 15, 13, 1), 0.1)
+      ),
+      url('/assets/images/runners-legs.jpg') center top 20%;
+    background-size: cover;
+    background-position: 50% 75%;
+  }
+
+  .get-started-container {
+    width: 60%;
+    height: 45%;
+    margin-top: 3em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .message {
+      text-align: center;
+      font-size: 2rem;
+      line-height: 1em;
+      font-weight: 700;
+      margin-bottom: 0.5em;
+    }
+
+    button {
+      font-size: 2em;
+      height: 2em;
+      width: 40%;
+    }
+  }
+}

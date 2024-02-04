@@ -1,0 +1,46 @@
+{
+  "title": "06 WEEKS TO GO",
+  "runs": [
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "6 Weeks to Go",
+      "items": ["15:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "Rock n Roller",
+      "runSubtype": "Intervals",
+      "items": [
+        "6:00 Warm Up",
+        "5:00 10K Pace",
+        "2:30 5K Pace",
+        "1:00 Mile Pace",
+        "0:30 Best Pace",
+        "0:30 Best Pace",
+        "1:00 Mile Pace",
+        "2:30 5K Pace",
+        "5:00 10K Pace",
+        "1:30 Recovery after 10K Pace and 5K Pace",
+        "1:00 Recovery after Mile Pace and",
+        "Best Pace"
+      ]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Suckcess Run",
+      "items": ["35:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "8K Tempo Run",
+      "runSubtype": "Tempo Run",
+      "items": ["2K Warm Up", "8K Tempo Run", "2K Cool Down"]
+    },
+    {
+      "runType": "LONG RUN",
+      "runTitle": "Another Ten",
+      "runSubtype": "Mile Run",
+      "items": ["16K/10 Mile Run"]
+    }
+  ]
+}

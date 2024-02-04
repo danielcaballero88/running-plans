@@ -1,18 +1,47 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core'
+import { BrowserModule } from '@angular/platform-browser'
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { AppMaterialModule } from 'src/app/app-material/app-material.module'
+import { AppRoutingModule } from './app-routing.module'
+import { AppComponent } from './app.component'
+import { FooterComponent } from './components/shared/footer/footer.component'
+import { HeaderComponent } from './components/shared/header/header.component'
+import { NavigationComponent } from './components/shared/navigation/navigation.component'
+import {
+  PaceChartDialogButtonComponent,
+  PaceChartDialogComponent,
+} from './components/shared/pace-chart-dialog/pace-chart-dialog.component'
+import { PaceChartTableComponent } from './components/shared/pace-chart-table/pace-chart-table.component'
+import { GetStartedComponent } from './components/views/get-started/get-started.component'
+import { HomeComponent } from './components/views/home/home.component'
+import { PaceChartComponent } from './components/views/pace-chart/pace-chart.component'
+import { RunningPlanComponent } from './components/views/running-plan/running-plan.component'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    HeaderComponent,
+    FooterComponent,
+    NavigationComponent,
+    GetStartedComponent,
+    PaceChartComponent,
+    RunningPlanComponent,
+    PaceChartTableComponent,
+    PaceChartDialogButtonComponent,
+    PaceChartDialogComponent,
   ],
   imports: [
+    AppMaterialModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

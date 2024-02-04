@@ -1,0 +1,31 @@
+<app-pace-chart-dialog></app-pace-chart-dialog>
+
+<div *ngIf="runningPlan && runningPlan.plan" class="container">
+  <h1>Here is your running plan:</h1>
+
+  <mat-card *ngFor="let weekObj of runningPlan.plan.weeks">
+    <mat-card-content>
+      <p>{{ weekObj.title }}</p>
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let runObj of weekObj.runs">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ runObj.runType }}: {{ runObj.runTitle }}
+            </mat-panel-title>
+            <!-- <mat-panel-description>
+              This is a summary of the content
+            </mat-panel-description> -->
+          </mat-expansion-panel-header>
+          <p class="run-subtype" *ngIf="runObj.runSubtype">
+            {{ runObj.runSubtype }}
+          </p>
+          <ul class="run-items-list">
+            <li class="run-item" *ngFor="let item of runObj.items">
+              <span>{{ item }}</span>
+            </li>
+          </ul>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card-content>
+  </mat-card>
+</div>

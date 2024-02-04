@@ -1,0 +1,41 @@
+{
+  "title": "10 WEEKS TO GO",
+  "runs": [
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "10 Weeks to Go",
+      "items": ["15:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "Sneaky Speed",
+      "runSubtype": "Intervals",
+      "items": [
+        "5:00 Warm Up",
+        "1 x 1:30 5K Pace",
+        "3 x 45 seconds Mile Pace",
+        "1 x 1:30 5K Pace",
+        "3 x 45 seconds Mile Pace",
+        "1 x 1:30 5K Pace",
+        "3 x 45 seconds Mile Pace",
+        "1:00 Recovery Between Intervals"
+      ]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "30 Minute Head Starts",
+      "items": ["30:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "Out Strong Back Fast",
+      "runSubtype": "Tempo Run",
+      "items": ["5:00 Warm Up", "23:00 Progression Tempo Run"]
+    },
+    {
+      "runType": "LONG RUN",
+      "runTitle": "Another 10K Run",
+      "items": ["10K/6.2 Mile Run"]
+    }
+  ]
+}

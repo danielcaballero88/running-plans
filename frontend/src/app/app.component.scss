@@ -1,0 +1,32 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-height: 100%;
+  position: relative;
+
+  app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    height: 3rem;
+  }
+
+  .main-content {
+    margin-top: 4.5em;
+    height: 80%;
+    position: relative;
+
+    max-width: 800px;
+  }
+
+  app-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}

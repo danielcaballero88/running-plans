@@ -1,0 +1,41 @@
+{
+  "title": "11 WEEKS TO GO",
+  "runs": [
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "11 Weeks to Go",
+      "items": ["15:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "The Rundown",
+      "runSubtype": "Intervals",
+      "items": [
+        "5:00 Warm Up",
+        "3 x 1:00 Mile Pace",
+        "3 x 2:00 5k Pace",
+        "2 x 1:00 Mile Pace",
+        "2 x 2:00 5k Pace",
+        "1 x 1:00 Mile Pace",
+        "1 x 2:00 5k Pace",
+        "Recovery is 1:00 after Mile Pace and 1:30 after 5K Pace"
+      ]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Running Towards Your Goal",
+      "items": ["40:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "Tempo Run",
+      "runSubtype": "Tempo Run",
+      "items": ["7:00 Warm Up", "25:00 Tempo Run"]
+    },
+    {
+      "runType": "LONG RUN",
+      "runTitle": "10K Run",
+      "items": ["10K/6.2 Mile Run"]
+    }
+  ]
+}

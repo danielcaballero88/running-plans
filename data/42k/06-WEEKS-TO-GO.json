@@ -1,0 +1,38 @@
+{
+  "title": "06 WEEKS TO GO",
+  "runs": [
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Run",
+      "items": ["65:00 Recovery Run"]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Breaking Through Barriers",
+      "items": ["31:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "Long and Strong and Fast",
+      "runSubtype": "Intervals",
+      "items": [
+        "5:00 Warmup",
+        "8:00 10K Pace",
+        "4:00 5K Pace",
+        "2:00 Mile Pace",
+        "Interval series should be done 3 x’s",
+        "3:00 recovery after 10K Pace and 2:00 recovery after 5K and Mile Pace intervals"
+      ]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Run",
+      "items": ["30:00 Recovery Run"]
+    },
+    {
+      "runType": "LONG RUN",
+      "runTitle": "90 Minute Run",
+      "items": ["90:00 Run"]
+    }
+  ]
+}

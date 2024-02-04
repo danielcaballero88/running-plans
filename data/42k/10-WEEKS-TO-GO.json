@@ -1,0 +1,31 @@
+{
+  "title": "10 WEEKS TO GO",
+  "runs": [
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Run",
+      "items": ["45:00 Recovery Run"]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Running on Empty",
+      "items": ["32:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "Tempo Run",
+      "runSubtype": "Tempo Run",
+      "items": ["7:00 Warm Up", "25:00 Tempo Run"]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Fuel the Run",
+      "items": ["33:00 Recovery Run"]
+    },
+    {
+      "runType": "LONG RUN",
+      "runTitle": "Half Marathon Run",
+      "items": ["21.1K/13.1 Miles"]
+    }
+  ]
+}

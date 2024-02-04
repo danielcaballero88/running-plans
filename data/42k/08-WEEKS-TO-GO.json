@@ -1,0 +1,37 @@
+{
+  "title": "08 WEEKS TO GO",
+  "runs": [
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Run",
+      "items": ["40:00 Recovery Run"]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Recovery Run",
+      "items": ["35:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "Out Strong Back Fast",
+      "runSubtype": "Tempo Run",
+      "items": [
+        "5:00 Warm Up",
+        "23:00 Tempo Run",
+        "First 12:00 running out strong and controlled",
+        "Last 11:00 running back progressively faster.",
+        "Goal is to cover same distance out and back."
+      ]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Run",
+      "items": ["30:00 Recovery Run"]
+    },
+    {
+      "runType": "LONG RUN",
+      "runTitle": "Long Run",
+      "items": ["22-26K/14-16 Mile Run"]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "title": "15 WEEKS TO GO",
+  "runs": [
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Go 20",
+      "items": ["20:00 Recovery Run"]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Run",
+      "items": ["30:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "Runner Up",
+      "runSubtype": "Hill Workout",
+      "items": [
+        "5:00 Warm Up",
+        "45 seconds 10K Effort",
+        "15 seconds Best Effort",
+        "Interval series should be done 5 x’s",
+        "Recovery is 1:15 after 10k effort",
+        "and 45 seconds after Best Effort"
+      ]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "A Hot Run",
+      "items": ["35:00 Recovery Run"]
+    },
+    {
+      "runType": "LONG RUN",
+      "runTitle": "Another 10K Run",
+      "items": ["10K/6.2 Mile Run"]
+    }
+  ]
+}

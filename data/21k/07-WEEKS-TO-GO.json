@@ -1,0 +1,41 @@
+{
+  "title": "07 WEEKS TO GO",
+  "runs": [
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "7 Weeks to Go",
+      "items": ["15:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "Deuces",
+      "runSubtype": "Intervals",
+      "items": [
+        "5:00 Warm Up",
+        "10 x 2:00 5K Pace",
+        "Recovery is 1:00 after all intervals except #4 and #8.",
+        "2:00 recovery after intervals #4 and #8."
+      ]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Just Another Run",
+      "items": ["35:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "One Hard. One Easy.",
+      "runSubtype": "Fartlek",
+      "items": [
+        "5:00 Warm Up",
+        "15:00 Fartlek",
+        "Alternate between 1:00 Hard Running and 1:00 Easy Running for 15:00"
+      ]
+    },
+    {
+      "runType": "LONG RUN",
+      "runTitle": "Ten Mile Run",
+      "items": ["16K/10 Mile Run"]
+    }
+  ]
+}

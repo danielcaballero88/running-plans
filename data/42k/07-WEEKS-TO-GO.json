@@ -1,0 +1,38 @@
+{
+  "title": "07 WEEKS TO GO",
+  "runs": [
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Run",
+      "items": ["60:00 Recovery Run"]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "New Morning Run",
+      "items": ["30:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "Hill Hillier Hilliest",
+      "runSubtype": "Hill Workout",
+      "items": [
+        "5:00 Warm Up",
+        "1:00 10K Effort",
+        "0:45 5K Effort",
+        "0:30 Mile Effort",
+        "Series is to be run a total of 3 times",
+        "Recovery is 2:00 after 10K effort, 1:30 after 5K effort & 1:00 after Mile effort"
+      ]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Run",
+      "items": ["30:00 Recovery Run"]
+    },
+    {
+      "runType": "LONG RUN",
+      "runTitle": "Long Run",
+      "items": ["26K-29K/16-18 Mile Run"]
+    }
+  ]
+}

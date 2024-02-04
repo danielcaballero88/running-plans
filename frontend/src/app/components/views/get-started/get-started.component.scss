@@ -1,0 +1,33 @@
+:host {
+  height: 100%;
+  flex-grow: 1;
+}
+
+:host,
+form,
+div.distance,
+div.time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+div.distnace,
+div.time {
+  margin-bottom: 2em;
+}
+
+.mat-button-toggle-group {
+  margin-left: 12px;
+
+  .mat-button-toggle {
+    width: 5em;
+  }
+}
+
+.debug {
+  background-color: lightgray;
+  color: blue;
+  padding: 2em;
+}

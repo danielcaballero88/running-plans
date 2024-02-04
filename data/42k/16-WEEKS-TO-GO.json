@@ -1,0 +1,34 @@
+{
+  "title": "16 WEEKS TO GO",
+  "runs": [
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "15 Minute Run",
+      "items": ["15:00 Recovery Run"]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Another 5K Run",
+      "items": [
+        "5K/3.1 Mile Recovery Run",
+        "SPEED RUN:",
+        "NRC Guided Run: One Hard Two Easy",
+        "Fartlek",
+        "5:00 Warm Up",
+        "21:00 Fartlek",
+        "Alternate between 1:00 Hard Running and 2:00 Easy Running",
+        "for 21:00"
+      ]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Easy Run",
+      "items": ["25:00 Recovery Run"]
+    },
+    {
+      "runType": "LONG RUN",
+      "runTitle": "Seven Mile Run",
+      "items": ["11.25K/7 Mile Run"]
+    }
+  ]
+}

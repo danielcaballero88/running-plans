@@ -1,0 +1,49 @@
+{
+  "title": "03 WEEKS TO GO",
+  "runs": [
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "3 Weeks to Go",
+      "items": ["15:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "Long and Strong and Fast",
+      "runSubtype": "Intervals",
+      "items": [
+        "5:00 Warmup",
+        "8:00 10K Pace",
+        "4:00 5K Pace",
+        "2:00 Mile Pace",
+        "Interval series should be done 3 x’s",
+        "3:00 recovery after 10K Pace and",
+        "2:00 recovery after 5K and Mile",
+        "Pace intervals"
+      ]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Run",
+      "items": ["60:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "Bring It Down",
+      "runSubtype": "Tempo Run",
+      "items": [
+        "5:00 Warmup",
+        "5:00 Recovery Run Pace",
+        "4:00 10K Pace",
+        "3:00 5K Pace",
+        "2:00 Mile Pace",
+        "1:00 Best Pace",
+        "This is to be run as a 15:00 Progression Tempo Run"
+      ]
+    },
+    {
+      "runType": "LONG RUN",
+      "runTitle": "One Hour Run",
+      "items": ["60:00 Recovery Run"]
+    }
+  ]
+}

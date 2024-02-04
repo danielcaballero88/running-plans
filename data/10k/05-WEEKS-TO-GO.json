@@ -1,0 +1,38 @@
+{
+  "title": "05 WEEKS TO GO",
+  "runs": [
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Running Towards Your Goal",
+      "items": [
+        "40:00 Recovery Run",
+        "NRC Guided Run: Tempo Run",
+        "Tempo Run",
+        "7:00 Warm Up",
+        "25:00 Tempo Run"
+      ]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Just Another Run",
+      "items": ["35:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "Speedurance",
+      "runSubtype": "Intervals",
+      "items": [
+        "7:00 Warm Up",
+        "3 x 2:00 5K Pace",
+        "10:00 Tempo Run",
+        "3 x 2:00 5K Pace",
+        "Recovery is 1:00 after 5K Pace intervals and 2:00 after Tempo Run"
+      ]
+    },
+    {
+      "runType": "LONG RUN",
+      "runTitle": "Five Mile Run",
+      "items": ["8K/5 Mile Run"]
+    }
+  ]
+}

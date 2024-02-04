@@ -1,0 +1,40 @@
+{
+  "title": "03 WEEKS TO GO",
+  "runs": [
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Breaking Through Barriers",
+      "items": ["31:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "Hill Hillier Hilliest",
+      "runSubtype": "Hills Workout",
+      "items": [
+        "5:00 Warm Up",
+        "1:00 10K Effort",
+        "0:45 5K Effort",
+        "0:30 Mile Effort",
+        "2:00 Recovery after 10K effort",
+        "1:30 Recovery after 5k effort",
+        "1:00 Recovery after Mile effort"
+      ]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Mindful Miles",
+      "items": ["50:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "Tempo Run",
+      "runSubtype": "Tempo Run",
+      "items": ["7:00 Warm Up", "20:00 Tempo Run"]
+    },
+    {
+      "runType": "LONG RUN",
+      "runTitle": "Seven Mile Run",
+      "items": ["11.25K/3.1 Mile Run"]
+    }
+  ]
+}
