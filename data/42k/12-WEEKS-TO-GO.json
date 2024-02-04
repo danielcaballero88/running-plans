@@ -1,0 +1,31 @@
+{
+  "title": "12 WEEKS TO GO",
+  "runs": [
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Just Another Run",
+      "items": ["35:00 Recovery Run"]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Morning Run",
+      "items": ["30:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "Tempo Run",
+      "runSubtype": "Tempo Run",
+      "items": ["7:00 Warm Up", "20:00 Tempo Run"]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Running in the Dark",
+      "items": ["48:00 Recovery Run"]
+    },
+    {
+      "runType": "LONG RUN",
+      "runTitle": "15K Run",
+      "items": ["15K/9.32 Mile Run"]
+    }
+  ]
+}

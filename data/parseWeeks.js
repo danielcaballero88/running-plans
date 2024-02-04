@@ -60,7 +60,7 @@ function joinJsonInOneFile(dir, jsonFiles) {
   });
 }
 
-const dirToProcess = "21k";
+const dirToProcess = "42k";
 const txtFiles = await readDirectoryAndFilterTxtFiles(dirToProcess);
 const txtFilesPaths = txtFiles.reverse().map((x) => path.join(dirToProcess, x));
 console.log(txtFilesPaths);

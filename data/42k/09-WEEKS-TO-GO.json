@@ -1,0 +1,35 @@
+{
+  "title": "09 WEEKS TO GO",
+  "runs": [
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Mindful Miles",
+      "items": ["50:00 Recovery Run"]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Mindful Meters",
+      "items": ["60:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "5 x 5 x 10k Pace",
+      "runSubtype": "Intervals",
+      "items": [
+        "5:00 Warm Up",
+        "5 x 5:00 10K Pace",
+        "2:00 recovery between intervals"
+      ]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Run for Life",
+      "items": ["33:00 Recovery Run"]
+    },
+    {
+      "runType": "LONG RUN",
+      "runTitle": "Two Hour Run",
+      "items": ["120:00 Run"]
+    }
+  ]
+}

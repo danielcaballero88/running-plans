@@ -1,0 +1,35 @@
+{
+  "title": "11 WEEKS TO GO",
+  "runs": [
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Suckcess Run",
+      "items": ["35:00 Recovery Run"]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "End of the Day Run",
+      "items": ["25:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "Triple 7’s",
+      "runSubtype": "Intervals",
+      "items": [
+        "5:00 Warm Up",
+        "3 x 7:00 5K Pace",
+        "Recovery is 2:30 between intervals"
+      ]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Run",
+      "items": ["60:00 Recovery Run"]
+    },
+    {
+      "runType": "LONG RUN",
+      "runTitle": "20K Run",
+      "items": ["20K/12.5 Mile Run"]
+    }
+  ]
+}

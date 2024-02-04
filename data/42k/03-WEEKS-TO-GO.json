@@ -1,0 +1,31 @@
+{
+  "title": "03 WEEKS TO GO",
+  "runs": [
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Run Long",
+      "items": ["80:00 Recovery Run"]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "Stress Free Run",
+      "items": ["25:00 Recovery Run"]
+    },
+    {
+      "runType": "SPEED RUN",
+      "runTitle": "8K Tempo Run",
+      "runSubtype": "Tempo Run",
+      "items": ["2K Warm Up", "8K Tempo Run", "2K Cool Down"]
+    },
+    {
+      "runType": "RECOVERY RUN",
+      "runTitle": "30 Minute Head Starts",
+      "items": ["30:00 Recovery Run"]
+    },
+    {
+      "runType": "LONG RUN",
+      "runTitle": "Long Run",
+      "items": ["19-23K/12-14 Mile Run"]
+    }
+  ]
+}
