@@ -13,9 +13,31 @@ div.time {
   justify-content: flex-start;
 }
 
-div.distnace,
+.title {
+  width: 85%;
+  text-align: center;
+}
+
+p {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.distance2 {
+  margin-top: 3em;
+}
+
 div.time {
-  margin-bottom: 2em;
+  .time-inputs {
+    width: 70%;
+
+    display: flex;
+    justify-content: space-around;
+
+    mat-form-field {
+      width: 40%;
+    }
+  }
 }
 
 .mat-button-toggle-group {

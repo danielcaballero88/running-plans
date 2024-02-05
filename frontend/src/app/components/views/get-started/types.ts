@@ -4,4 +4,5 @@ export interface UserInputObject {
   distance: Distance
   hours: number
   minutes: number
+  planningFor: Distance
 }

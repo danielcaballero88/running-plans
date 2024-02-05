@@ -1,7 +1,7 @@
-<p>First let's get some information about you:</p>
+<h1 class="title">First let's get some information about you:</h1>
 
 <form [formGroup]="userInputForm" (ngSubmit)="onSubmit()">
-  <div class="distance">
+  <div class="distance1">
     <p>Distance of your last race:</p>
     <p>
       <mat-button-toggle-group
@@ -19,42 +19,60 @@
 
   <div class="time">
     <p>What was your time?</p>
-    <mat-form-field class="example-full-width">
-      <mat-label>Hours</mat-label>
-      <input type="number" matInput formControlName="hours" maxlength="2" />
-      <mat-error *ngIf="userInputForm.get('hours')?.errors?.['required']">
-        Field is required
-      </mat-error>
-      <mat-error *ngIf="userInputForm.get('hours')?.errors?.['max']">
-        Max value is 10
-      </mat-error>
-      <mat-error *ngIf="userInputForm.get('hours')?.errors?.['pattern']">
-        Input should be a number
-      </mat-error>
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <mat-label>Minutes</mat-label>
-      <input type="number" matInput formControlName="minutes" maxlength="2" />
-      <mat-error *ngIf="userInputForm.get('minutes')?.errors?.['required']">
-        Field is required
-      </mat-error>
-      <mat-error *ngIf="userInputForm.get('minutes')?.errors?.['max']">
-        Max value is 59
-      </mat-error>
-      <mat-error *ngIf="userInputForm.get('minutes')?.errors?.['pattern']">
-        Input should be a number
-      </mat-error>
-    </mat-form-field>
-    <p>Complete the form to enable button.</p>
-    <button
-      mat-raised-button
-      color="primary"
-      type="submit"
-      [disabled]="!userInputForm.valid"
-    >
-      Continue
-    </button>
+    <div class="time-inputs">
+      <mat-form-field class="example-full-width">
+        <mat-label>Hours</mat-label>
+        <input type="number" matInput formControlName="hours" maxlength="2" />
+        <mat-error *ngIf="userInputForm.get('hours')?.errors?.['required']">
+          Field is required
+        </mat-error>
+        <mat-error *ngIf="userInputForm.get('hours')?.errors?.['max']">
+          Max value is 10
+        </mat-error>
+        <mat-error *ngIf="userInputForm.get('hours')?.errors?.['pattern']">
+          Input should be a number
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Minutes</mat-label>
+        <input type="number" matInput formControlName="minutes" maxlength="2" />
+        <mat-error *ngIf="userInputForm.get('minutes')?.errors?.['required']">
+          Field is required
+        </mat-error>
+        <mat-error *ngIf="userInputForm.get('minutes')?.errors?.['max']">
+          Max value is 59
+        </mat-error>
+        <mat-error *ngIf="userInputForm.get('minutes')?.errors?.['pattern']">
+          Input should be a number
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="distance2">
+      <p>What distance are you planning for?</p>
+      <p>
+        <mat-button-toggle-group
+          name="fontStyle"
+          aria-label="Font Style"
+          formControlName="planningFor"
+        >
+          <mat-button-toggle [value]="distanceEnum._5k">5k</mat-button-toggle>
+          <mat-button-toggle [value]="distanceEnum._10k">10k</mat-button-toggle>
+          <mat-button-toggle [value]="distanceEnum._21k">21k</mat-button-toggle>
+          <mat-button-toggle [value]="distanceEnum._42k">42k</mat-button-toggle>
+        </mat-button-toggle-group>
+      </p>
+    </div>
   </div>
+
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="!userInputForm.valid"
+  >
+    Continue
+  </button>
   <!-- <div class="debug">
     <p>Debug info:</p>
     <p>Form Value: {{ userInputForm.value | json }}</p>

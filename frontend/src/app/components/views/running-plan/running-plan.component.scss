@@ -17,6 +17,10 @@ app-pace-chart-dialog {
   width: 80%;
   margin: 2em 0;
 
+  .title {
+    padding-right: 1.5em;
+  }
+
   mat-card {
     width: 100%;
     margin-bottom: 1em;

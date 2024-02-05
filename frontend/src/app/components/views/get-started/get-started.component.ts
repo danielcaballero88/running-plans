@@ -43,6 +43,7 @@ export class GetStartedComponent implements OnInit, OnDestroy {
         Validators.pattern(/[0-9]/),
       ],
     ],
+    planningFor: ['', Validators.required],
   })
 
   ngOnInit(): void {
@@ -54,6 +55,7 @@ export class GetStartedComponent implements OnInit, OnDestroy {
         distance: this.userInput.distance.toString(),
         hours: this.userInput.hours.toString(),
         minutes: this.userInput.minutes.toString(),
+        planningFor: this.userInput.planningFor.toString(),
       })
     }
   }
@@ -67,14 +69,16 @@ export class GetStartedComponent implements OnInit, OnDestroy {
     console.warn(this.userInputForm.value)
 
     // Parse input to proper types and set it in app state
-    const { distance, hours, minutes } = this.userInputForm.value
+    const { distance, hours, minutes, planningFor } = this.userInputForm.value
     const _distance = distance as Distance
     const _hours = Number(hours)
     const _minutes = Number(minutes)
+    const _planningFor = planningFor as Distance
     this.appState.setUserInput({
       distance: _distance,
       hours: _hours,
       minutes: _minutes,
+      planningFor: _planningFor,
     })
 
     // Get pace chart for the given input and set in in app state
